@@ -1,0 +1,1558 @@
+<title>Capital Square Đà Nẵng — Hub tài liệu sale</title>
+<style>
+:root{
+  /* Hệ màu v2 (26/09/2026) — mỗi màu một vai. Tương phản đã tính: --mute 6,1:1 trên trắng; chữ trắng trên --dong 5,3:1;
+     --line-strong (viền ô nhập) 3,2:1 trên trắng (WCAG 1.4.11). --gold chỉ dùng làm điểm nhấn trang trí, KHÔNG làm nền chữ. */
+  --bg:#f2f3f0;          /* nền đá — xám hơi ấm, không trắng chói ngoài nắng */
+  --card:#ffffff; --card-2:#f7f8f5;
+  --ink:#17212b;         /* chữ chính */
+  --mute:#566170;        /* chữ phụ */
+  --line:#dfe3dc;        /* kẻ trang trí */
+  --line-strong:#8a929c; /* viền ô nhập / nút phụ */
+  --navy:#13304d;        /* sông Hàn — thương hiệu, điều hướng */
+  --navy2:#1f4e79;       /* liên kết */
+  --navy-soft:#e7eef6;
+  --dong:#8d5f1c;        /* đồng — nút hành động chính */
+  --gold:#c49a4e;        /* viền nhấn trang trí */
+  --gold-soft:#f6ecd9;
+  --ok:#1f7a4a;--warn:#9a5b00;--bad:#b3261e;--warn-soft:#fdf2df;--bad-soft:#fbe9e7;--ok-soft:#e5f3eb;
+  --r:12px; --r-sm:8px;
+  --bong:0 1px 2px rgba(19,48,77,.06),0 2px 8px rgba(19,48,77,.05);
+  --cao-head:56px; --rong-nav:236px; --cao-bot:64px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--navy2)}
+header.top{background:var(--navy);color:#fff;padding:14px 16px}
+header.top .wrap{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between}
+header.top h1{margin:0;font-size:19px;font-weight:700;letter-spacing:.2px}
+header.top h1 span{color:var(--gold);font-weight:600}
+header.top .meta{font-size:12.5px;opacity:.85}
+.badge{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:99px;background:var(--gold-soft);color:#7a5a1f;white-space:nowrap}
+.b-ok{background:var(--ok-soft);color:var(--ok)}.b-warn{background:var(--warn-soft);color:var(--warn)}.b-bad{background:var(--bad-soft);color:var(--bad)}.b-mute{background:#eceae4;color:var(--mute)}
+nav.tabs{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+nav.tabs .wrap{max-width:1180px;margin:0 auto;display:flex;gap:2px;overflow-x:auto;padding:0 8px;scrollbar-width:none}
+nav.tabs button{flex:0 0 auto;border:0;background:none;padding:12px 12px;font:inherit;font-size:14px;color:var(--mute);cursor:pointer;border-bottom:2.5px solid transparent}
+nav.tabs button[aria-selected=true]{color:var(--navy);border-bottom-color:var(--gold);font-weight:600}
+main{max-width:1180px;margin:0 auto;padding:16px}
+section.tab[hidden]{display:none}
+h2{font-size:18px;margin:4px 0 12px;color:var(--navy)}
+h3{font-size:15.5px;margin:0 0 8px;color:var(--navy)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-bottom:12px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.facts{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));margin-bottom:12px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px}
+.fact b{display:block;font-size:17px;color:var(--navy)}
+.fact small{color:var(--mute);font-size:12px}
+.muted{color:var(--mute)}.small{font-size:12.5px}
+.alert{border-radius:var(--r);padding:10px 12px;margin:0 0 12px;font-size:13.5px}
+.alert.warn{background:var(--warn-soft);border:1px solid #f0d6a8}
+.alert.bad{background:var(--bad-soft);border:1px solid #f3c2bd}
+.alert.info{background:#eaf1f8;border:1px solid #c9dbee}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 12px;font:inherit;font-size:13.5px;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:#fff}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#faf8f3;color:var(--mute);font-weight:600;font-size:12.5px;white-space:nowrap}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.row-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+input[type=search],input[type=text],input[type=number],select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);min-width:0}
+input[type=search]{flex:1 1 220px}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--mute)}
+.form-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));margin-bottom:12px}
+.btn{border:0;border-radius:8px;padding:9px 14px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;background:var(--navy);color:#fff}
+.btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--line)}
+ul.tight{margin:4px 0;padding-left:18px}ul.tight li{margin:2px 0}
+details.kb{background:#fff;border:1px solid var(--line);border-radius:var(--r);margin-bottom:8px}
+details.kb summary{cursor:pointer;padding:10px 12px;font-weight:600;list-style:none;display:flex;gap:8px;align-items:center}
+details.kb summary::-webkit-details-marker{display:none}
+details.kb .body{padding:0 12px 12px}
+.src{font-size:11.5px;color:var(--mute);margin-top:6px}
+.total{font-weight:700;background:#faf8f3}
+footer.legal{max-width:1180px;margin:8px auto 90px;padding:0 16px;font-size:12px;color:var(--mute)}
+/* chat */
+#chatBtn{position:fixed;right:16px;bottom:16px;z-index:40;border:0;border-radius:99px;background:var(--gold);color:#fff;font:inherit;font-weight:700;padding:12px 18px;box-shadow:0 6px 18px rgba(0,0,0,.18);cursor:pointer}
+#chat{position:fixed;right:16px;bottom:16px;z-index:50;width:min(400px,calc(100vw - 32px));height:min(560px,calc(100vh - 32px));background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 36px rgba(0,0,0,.22);display:flex;flex-direction:column;overflow:hidden}
+#chat[hidden]{display:none}
+#chat .hd{background:var(--navy);color:#fff;padding:10px 12px;display:flex;justify-content:space-between;align-items:center}
+#chat .hd button{background:none;border:0;color:#fff;font-size:20px;cursor:pointer;line-height:1}
+#chatLog{flex:1;overflow-y:auto;padding:10px;background:#faf8f3}
+.msg{max-width:88%;padding:8px 11px;border-radius:12px;margin:6px 0;font-size:14px}
+.msg.me{margin-left:auto;background:var(--navy);color:#fff;border-bottom-right-radius:3px}
+.msg.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:3px}
+.msg .src{margin-top:4px}
+.sugg{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0}
+.sugg button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:4px 10px;font:inherit;font-size:12.5px;cursor:pointer}
+#chatForm{display:flex;gap:6px;padding:8px;border-top:1px solid var(--line)}
+#chatForm input{flex:1}
+/* đăng nhập + phân vai */
+#login{position:fixed;inset:0;z-index:90;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
+#login[hidden]{display:none}
+.lg-card{background:#fff;border-radius:14px;padding:22px 20px;width:min(400px,100%);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.lg-card form{display:flex;flex-direction:column;gap:9px}
+.lg-card input,.lg-card select{width:100%;font-size:16px;padding:11px 12px}
+.lg-card .btn{padding:12px}
+.lg-sr{font-size:13px;font-weight:600;color:var(--ink);margin:4px 0 -4px}   /* nhãn hiện trên ô (không dùng chữ mờ thay nhãn) */
+#lgErr{color:var(--bad);font-size:14px;margin:8px 0 0;min-height:1em}
+body[data-vai="khach"] .chi-sale{display:none!important}
+body:not([data-vai="admin"]) .chi-admin{display:none!important}
+body:not([data-vai="khach"]) .chi-khach{display:none!important}
+/* màn hình: chon (chọn dự án) · csq (hub Capital Square) · du-an (giỏ hàng dự án khác) */
+.man{display:none}
+body[data-man="chon"] #manChon, body[data-man="du-an"] #manDuAn{display:block}
+body[data-man="chon"] nav.tabs, body[data-man="chon"] main, body[data-man="du-an"] nav.tabs, body[data-man="du-an"] main,
+body[data-man="chon"] #chatBtn, body[data-man="du-an"] #chatBtn, body[data-man="chon"] #chat, body[data-man="du-an"] #chat{display:none!important}
+body[data-man="chon"] #doiDuAn{display:none!important}
+.man-wrap{max-width:1180px;margin:0 auto;padding:16px}
+.da-the{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;text-align:left;font:inherit;cursor:pointer;display:flex;flex-direction:column;gap:6px;color:var(--ink)}
+.da-the:hover{border-color:var(--navy2);box-shadow:0 4px 14px rgba(22,50,79,.1)}
+.da-the b{font-size:17px;color:var(--navy)}
+.da-the.hub{border-color:var(--gold);background:linear-gradient(#fff,#fffaf0)}
+.da-the[disabled]{opacity:.55;cursor:default}
+/* đặt lịch (vai khách) */
+#dlBtn{position:fixed;right:16px;bottom:16px;z-index:40;border:0;border-radius:99px;background:var(--gold);color:#fff;font:inherit;font-weight:700;font-size:15px;padding:14px 20px;box-shadow:0 6px 18px rgba(0,0,0,.2);cursor:pointer}
+#canModal{position:fixed;inset:0;z-index:84;background:rgba(22,50,79,.55);display:flex;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto}
+#canModal[hidden]{display:none}
+#canNoiDung th{white-space:normal;font-size:13px}
+#canNoiDung td.num{white-space:nowrap}
+#dlModal{position:fixed;inset:0;z-index:85;background:rgba(22,50,79,.55);display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
+#dlModal[hidden]{display:none}
+#dlModal .lg-card form{gap:10px}
+.dl-chon{display:flex;gap:8px}
+.dl-chon label{flex:1;border:1px solid var(--line);border-radius:8px;padding:10px;cursor:pointer;font-size:14px;text-align:center}
+.dl-chon input{position:absolute;opacity:0;pointer-events:none}
+.dl-chon label:has(input:checked){border-color:var(--navy);background:#eaf1f8;font-weight:600}
+.dl-chon label:has(input:focus-visible){outline:2px solid var(--navy);outline-offset:2px}
+.dl-dy{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--mute);text-align:left}
+.dl-dy input{width:20px;height:20px;flex:0 0 auto;margin-top:1px}
+/* báo cáo hiệu suất (chỉ admin) — màu series đã chạy validate_palette: sale #2f6ea8 · khách #c08a2e */
+:root{--s-sale:#2f6ea8;--s-khach:#c08a2e}
+.bc-bar{display:flex;align-items:flex-end;gap:6px;height:150px;padding:8px 4px 0;border-bottom:1px solid var(--line)}
+.bc-cot{flex:1;display:flex;flex-direction:column-reverse;gap:2px;min-width:8px;position:relative;cursor:default;height:100%;justify-content:flex-start}
+.bc-cot span{display:block;border-radius:0}
+.bc-cot span:last-child{border-radius:4px 4px 0 0}
+.bc-cot:hover span{filter:brightness(1.12)}
+.bc-nhan{display:flex;gap:6px;padding:4px 4px 0;font-size:11px;color:var(--mute)}
+.bc-nhan div{flex:1;text-align:center;min-width:8px;overflow:hidden;white-space:nowrap}
+.bc-leg{display:flex;gap:14px;font-size:12.5px;color:var(--mute);margin:0 0 6px}
+.bc-leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+#bcTip{position:fixed;z-index:95;background:#1c2230;color:#fff;font-size:12.5px;padding:6px 9px;border-radius:6px;pointer-events:none;white-space:nowrap}
+#bcTip[hidden]{display:none}
+.bc-0 td{color:var(--mute)}
+/* thi đua */
+.td-buc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:end;margin-bottom:14px}
+.td-o{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:12px 8px;text-align:center}
+.td-o b{display:block;font-size:15px;color:var(--navy);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.td-o .d{font-size:22px;font-weight:700;color:var(--ink)}
+.td-o.h1{border-color:var(--gold);background:var(--gold-soft);padding-top:20px}
+.td-o .hc{font-size:26px;line-height:1}
+tr.td-toi td{background:#eaf1f8;font-weight:600}
+/* kho khách */
+.kt{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;margin-bottom:10px}
+.kt.can-goi{border-left:4px solid var(--gold)}
+.kt.dnc{opacity:.6}
+.kt-dau{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;justify-content:space-between}
+.kt-nut{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.kt-nut a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:8px;border:1px solid var(--line);text-decoration:none;font-weight:600;font-size:14px}
+.kt-sua{display:grid;gap:8px;grid-template-columns:1fr 1fr}
+.kt-sua textarea{grid-column:1/-1;font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;min-height:60px}
+@media (max-width:600px){.kt-sua{grid-template-columns:1fr}}
+/* telesales */
+.ts-loi{position:relative;background:#faf8f3;border:1px solid var(--line);border-radius:8px;padding:9px 44px 9px 11px;margin:6px 0;font-size:14.5px}
+.ts-loi .chep{position:absolute;top:4px;right:4px;border:1px solid var(--line);background:#fff;border-radius:6px;font:inherit;font-size:12.5px;padding:0 10px;min-height:36px;cursor:pointer;color:var(--navy)}
+.ts-note{font-size:12.5px;color:var(--mute);margin:2px 0 10px}
+mark.ph{background:var(--gold-soft);color:#7a5a1f;border-radius:3px;padding:0 3px}
+.ts-muc{scroll-margin-top:56px}
+.ts-nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.ts-nav a.chip{text-decoration:none}
+@media (max-width:600px){main{padding:12px}header.top h1{font-size:17px}th,td{padding:7px 8px}}
+
+/* ================= GIAO DIỆN v2 (26/09/2026) ================= */
+body{font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h2{font-size:20px;letter-spacing:-.01em;margin:2px 0 14px}
+h3{font-size:16px;letter-spacing:-.005em}
+/* đầu trang: navy + viền đồng mảnh (phần tử nhận diện) */
+header.top{position:sticky;top:0;z-index:30;padding:0 16px;height:var(--cao-head);display:flex;align-items:center;border-bottom:2px solid var(--gold);box-shadow:0 2px 10px rgba(19,48,77,.18)}
+header.top .wrap{width:100%;max-width:none;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:nowrap}
+header.top h1{font-size:17px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+header.top .meta{display:flex;align-items:center;gap:8px;font-size:12.5px;opacity:1;white-space:nowrap}
+header.top .meta .badge{background:rgba(255,255,255,.12);color:#f6ecd9}
+#nguoiDung{color:#dfe7f0;max-width:200px;overflow:hidden;text-overflow:ellipsis;display:inline-block;vertical-align:bottom}
+#doiDuAn{min-height:32px;border-color:rgba(246,236,217,.55)!important;color:#f6ecd9!important;font-weight:600}
+#doiNguoi{color:#c9d6e3!important}
+/* ---- điều hướng: thanh bên trái (máy tính) / ngăn kéo (điện thoại) ---- */
+nav.tabs{position:fixed;top:var(--cao-head);left:0;bottom:0;width:var(--rong-nav);z-index:25;background:var(--card);border-right:1px solid var(--line);border-bottom:0;overflow-y:auto}
+nav.tabs .wrap{display:flex;flex-direction:column;gap:2px;max-width:none;padding:12px 10px 24px;overflow:visible}
+nav.tabs .nhom{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);padding:14px 10px 6px}
+nav.tabs .nhom:first-child{padding-top:4px}
+nav.tabs button{display:flex;align-items:center;gap:10px;width:100%;min-height:42px;padding:8px 10px;border:0;border-radius:var(--r-sm);font-size:14.5px;color:var(--ink);text-align:left;border-bottom:0}
+nav.tabs button i{font-style:normal;width:22px;text-align:center;font-size:16px}
+nav.tabs button:hover{background:var(--card-2)}
+nav.tabs button[aria-selected=true]{background:var(--navy-soft);color:var(--navy);font-weight:600;box-shadow:inset 3px 0 0 var(--dong)}
+main{max-width:1120px;margin:0 0 0 var(--rong-nav);padding:22px 28px 40px}
+footer.legal{max-width:1120px;margin:0 0 40px var(--rong-nav);padding:0 28px}
+body[data-man="chon"] footer.legal,body[data-man="du-an"] footer.legal{margin-left:0}
+#navNen{position:fixed;inset:0;z-index:24;background:rgba(19,48,77,.35)}
+#navNen[hidden]{display:none}
+/* ---- thanh dưới (điện thoại) ---- */
+#botBar{display:none}
+@media (max-width:1023px){
+  nav.tabs{transform:translateX(-102%);transition:transform .22s ease;width:min(300px,84vw);box-shadow:4px 0 24px rgba(19,48,77,.18)}
+  body.nav-mo nav.tabs{transform:none}
+  main{margin-left:0;padding:16px 16px calc(var(--cao-bot) + 28px)}
+  footer.legal{margin-left:0;padding:0 16px;margin-bottom:calc(var(--cao-bot) + 24px)}
+  #botBar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:26;height:calc(var(--cao-bot) + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);background:var(--card);border-top:1px solid var(--line);box-shadow:0 -2px 12px rgba(19,48,77,.08)}
+  #botBar button{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:0;background:none;font:inherit;font-size:11.5px;color:var(--mute);cursor:pointer;min-width:0;padding:6px 2px}
+  #botBar button i{font-style:normal;font-size:20px;line-height:1}
+  #botBar button span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  #botBar button[aria-current=page]{color:var(--navy);font-weight:700}
+  #botBar button[aria-current=page] i{transform:translateY(-1px)}
+  #chatBtn,#dlBtn{bottom:calc(var(--cao-bot) + 14px + env(safe-area-inset-bottom))}
+  header.top h1{font-size:15px}
+  #nguoiDung,header.top .meta .badge,.ngay-dl{display:none}
+  #doiNguoi{font-size:12px}
+  #chatBtn{width:52px;height:52px;padding:0;border-radius:50%;font-size:22px;display:flex;align-items:center;justify-content:center}
+  #chatBtn span{display:none}
+}
+@media (prefers-reduced-motion:reduce){nav.tabs{transition:none}}
+/* bảng hàng trên màn hẹp → thẻ căn (không kéo ngang) */
+@media (max-width:640px){
+  #bhWrap .tbl-wrap{background:none;border:0;box-shadow:none;overflow:visible}
+  #bhWrap table,#bhWrap tbody{display:block}
+  #bhWrap thead{display:none}
+  #bhWrap tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;margin-bottom:10px;box-shadow:var(--bong)}
+  #bhWrap tbody tr td{display:flex;flex-direction:column;padding:2px 0;border:0;background:none!important;text-align:left;white-space:normal}
+  #bhWrap tbody tr td::before{content:attr(data-nhan);font-size:11.5px;color:var(--mute);font-weight:500}
+  #bhWrap tbody tr td.ma{grid-column:1/-1;font-size:17px}
+  #bhWrap tbody tr td.ma::before,#bhWrap tbody tr td[colspan]::before{display:none}
+  #bhWrap tbody tr td.gia{font-weight:700;color:var(--ink)}
+  .phu-tieu-de{display:none}
+}
+body[data-man="chon"] #botBar,body[data-man="du-an"] #botBar,body[data-man="chon"] #navNen,body[data-man="du-an"] #navNen{display:none!important}
+/* ---- thẻ, bảng, nút, ô nhập ---- */
+.card,.fact,.kt,details.kb,.td-o,.da-the{border-color:var(--line);box-shadow:var(--bong)}
+.card{border-radius:var(--r);padding:16px 18px;margin-bottom:14px}
+.fact{border-radius:var(--r);padding:12px 14px}
+.fact b{font-size:clamp(17px,1.7vw,22px);letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.25}
+.fact small{font-size:12.5px}
+.facts{gap:12px;margin-bottom:16px}
+.alert{border-radius:var(--r);padding:12px 14px;font-size:14px;line-height:1.5}
+.alert.info{background:var(--navy-soft);border-color:#c9d8e8}
+.tbl-wrap{border-radius:var(--r);box-shadow:var(--bong)}
+table{font-size:14px}
+th{background:var(--card-2);color:var(--mute);font-size:12px;letter-spacing:.02em;position:sticky;top:0;z-index:1}
+td,th{padding:10px 12px}
+tbody tr:nth-child(even) td{background:#fbfbf9}
+tbody tr:hover td{background:#f3f6fa}
+td.num{font-variant-numeric:tabular-nums}
+.btn{min-height:44px;padding:10px 18px;border-radius:10px;background:var(--dong);font-weight:600;letter-spacing:.005em;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.btn:hover{filter:brightness(1.06)}
+.btn:disabled{opacity:.55;cursor:default}
+.btn.ghost{background:var(--card);color:var(--navy);border:1px solid var(--line-strong);box-shadow:none}
+.chip{min-height:38px;padding:6px 14px;border-color:var(--line-strong);font-size:14px}
+.chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy)}
+input[type=search],input[type=text],input[type=number],input[type=date],input[type=email],input[type=tel],input[type=password],select,textarea{min-height:44px;border:1px solid var(--line-strong)!important;border-radius:10px;background:var(--card);color:var(--ink)}
+:focus-visible{outline:3px solid #2f6ea8;outline-offset:2px}
+.badge{font-size:12px;padding:3px 9px}
+details.kb summary{min-height:48px}
+/* ---- màn đăng nhập ---- */
+#login{background:radial-gradient(120% 90% at 50% 0%,#1f4e79 0%,var(--navy) 60%)}
+.lg-card{border-radius:16px;padding:26px 22px;border-top:3px solid var(--gold)}
+.lg-card h2{font-size:22px;color:var(--navy);margin-bottom:10px}
+/* ---- màn chọn dự án ---- */
+.man-wrap{padding:24px 16px 40px}
+#chonDs{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.da-the{border-radius:var(--r);padding:18px;min-height:128px;transition:border-color .15s,box-shadow .15s,transform .15s}
+.da-the:hover{transform:translateY(-1px)}
+.da-the .badge{white-space:normal;line-height:1.4;align-self:flex-start}
+body[data-man="chon"] footer.legal,body[data-man="du-an"] footer.legal{display:none}
+.da-the.hub{border:1.5px solid var(--gold);background:linear-gradient(180deg,#fffdf8,#fbf3e3)}
+/* ---- nút nổi ---- */
+#chatBtn{background:var(--navy);box-shadow:0 6px 18px rgba(19,48,77,.3)}
+#dlBtn{background:var(--dong)}
+/* ================= ĐIỀU HƯỚNG ĐẦU TRANG (26/09/2026, CEO lệnh "nút đổi màn hình ở đầu trang") =================
+   Ghi đè thanh bên + thanh dưới: MỘT hàng mục dính dưới tiêu đề, cuộn ngang, mọi kích thước màn hình. */
+nav.tabs{position:sticky;top:var(--cao-head);left:auto;bottom:auto;width:auto;z-index:25;transform:none!important;box-shadow:0 1px 0 var(--line),0 4px 10px rgba(19,48,77,.05);border-right:0;overflow:visible;background:var(--card)}
+nav.tabs .wrap{flex-direction:row;align-items:center;gap:4px;max-width:1180px;margin:0 auto;padding:8px 12px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+nav.tabs .wrap::-webkit-scrollbar{display:none}
+@media (max-width:1023px){nav.tabs .wrap{-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}}   /* điện thoại: cuộn ngang + vệt mờ báo còn mục */
+@media (min-width:1024px){nav.tabs .wrap{flex-wrap:wrap;overflow-x:visible;row-gap:6px}}   /* màn rộng: xuống dòng, thấy đủ mục (admin 13 mục) */
+nav.tabs .nhom{flex:0 0 auto;font-size:0;padding:0;margin:0 6px;width:1px;height:26px;background:var(--line)}
+nav.tabs .nhom:first-child{display:none}
+nav.tabs button{flex:0 0 auto;width:auto;min-height:40px;padding:8px 14px;border-radius:99px;gap:7px;font-size:14px;white-space:nowrap;scroll-snap-align:center;border:1px solid transparent}
+nav.tabs button i{width:auto;font-size:15px}
+nav.tabs button:hover{background:var(--card-2)}
+nav.tabs button[aria-selected=true]{background:var(--navy);color:#fff;box-shadow:none;border-color:var(--navy)}
+main{max-width:1180px;margin:0 auto;padding:20px 20px 40px}
+footer.legal{max-width:1180px;margin:0 auto 40px;padding:0 20px}
+#botBar,#navNen{display:none!important}
+@media (max-width:1023px){
+  main{padding:14px 16px 32px}
+  footer.legal{padding:0 16px;margin-bottom:32px}
+  #chatBtn,#dlBtn{bottom:16px}
+  nav.tabs .wrap{padding:8px 10px}
+  nav.tabs button{min-height:38px;padding:7px 12px;font-size:13.5px}
+}
+/* ================= GIAO DIỆN v3 — đồng bộ app.fbgproperty.vn (27/09/2026) =================
+   Inter · nền xám nhạt · thẻ trắng bo 16px · điểm nhấn gradient chàm → tím (indigo-600 → fuchsia-600) · đầu trang tối slate.
+   Tương phản: chữ trắng trên #4f46e5 6,3:1 · trên #a21caf 6,0:1 · --mute #5b6477 trên trắng 5,9:1 · --line-strong #7c8497 ≥3,4:1 trên mọi nền ô. */
+:root{
+  --bg:#f5f6fa; --card:#fff; --card-2:#f8f9fc;
+  --ink:#0f172a; --mute:#5b6477; --line:#e6e8f0; --line-strong:#7c8497;
+  --navy:#312e81;          /* chàm đậm — tiêu đề, chữ nhấn */
+  --navy2:#4338ca;         /* liên kết */
+  --navy-soft:#eef0ff;
+  --dong:#4f46e5;          /* nút chính: indigo-600 */
+  --tim:#a21caf;           /* đuôi gradient: fuchsia-700 */
+  --grad:linear-gradient(90deg,#4f46e5,#a21caf);
+  --gold:#8b5cf6; --gold-soft:#f3efff;
+  --dem:#0b1020;           /* nền tối đầu trang/đăng nhập */
+  --r:16px; --r-sm:12px;
+  --bong:0 1px 2px rgba(15,23,42,.04),0 4px 14px rgba(15,23,42,.05);
+}
+body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:-.005em}
+h2{font-weight:800;letter-spacing:-.025em;color:var(--ink)}
+h3{font-weight:700;color:var(--ink)}
+/* đầu trang tối + chữ gradient */
+header.top{background:var(--dem);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 4px 20px rgba(11,16,32,.25)}
+header.top h1{font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+header.top h1::before{content:"⌂";flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:10px;background:var(--grad);color:#fff;font-size:17px;font-weight:700;box-shadow:0 4px 12px rgba(79,70,229,.35)}
+header.top h1 span{background:linear-gradient(90deg,#a5b4fc,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent}
+header.top .meta .badge{background:rgba(255,255,255,.06);color:#c7d2fe;border:1px solid rgba(255,255,255,.12)}
+#nguoiDung{color:#cbd5e1}
+#doiNguoi{color:#a5b4fc!important}
+#doiDuAn{background:#fff!important;color:var(--ink)!important;border:0!important;font-weight:800!important;border-radius:10px!important;padding:5px 12px!important}
+/* hàng mục */
+nav.tabs{background:rgba(255,255,255,.92);-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);box-shadow:0 1px 0 var(--line)}
+nav.tabs button{border-radius:12px;color:#334155;font-weight:600}
+nav.tabs button:hover{background:var(--navy-soft);color:var(--navy2)}
+nav.tabs button[aria-selected=true]{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 4px 14px rgba(79,70,229,.28)}
+/* thẻ */
+.card,.fact,.kt,details.kb,.td-o,.da-the,.tbl-wrap{border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--bong)}
+.fact{position:relative;overflow:hidden}
+.fact b{font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fact small{text-transform:uppercase;letter-spacing:.05em;font-size:11px;font-weight:700}
+th{background:var(--card-2);text-transform:uppercase;letter-spacing:.05em;font-size:11px;font-weight:700}
+tbody tr:nth-child(even) td{background:#fafbfe}
+tbody tr:hover td{background:#f1f2ff}
+/* nút */
+.btn{background:var(--grad);border-radius:12px;font-weight:800;box-shadow:0 6px 16px rgba(79,70,229,.25)}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line-strong);box-shadow:none;font-weight:700}
+.btn.ghost:hover{background:var(--navy-soft)}
+.chip{border-radius:12px;font-weight:600}
+.chip[aria-pressed=true]{background:var(--dong);border-color:var(--dong)}
+input[type=search],input[type=text],input[type=number],input[type=date],input[type=email],input[type=tel],input[type=password],select,textarea{border-radius:12px;background:var(--card-2)}
+input:focus,select:focus,textarea:focus{background:#fff}
+:focus-visible{outline:3px solid #818cf8;outline-offset:2px}
+label.f,.lg-sr{text-transform:uppercase;letter-spacing:.08em;font-size:11px!important;font-weight:700!important;color:var(--mute)!important}
+.badge{font-weight:700}
+.alert.info{background:var(--navy-soft);border-color:#c7d2fe}
+/* màn đăng nhập 2 nửa */
+#login{background:radial-gradient(80% 60% at 20% 0%,#312e81 0%,transparent 60%),radial-gradient(70% 60% at 100% 100%,#701a75 0%,transparent 55%),var(--dem)}
+.lg-khung{display:flex;width:min(900px,100%);border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 30px 80px rgba(0,0,0,.45);margin:auto}
+.lg-ben{flex:1 1 50%;background:linear-gradient(135deg,#4f46e5 0%,#4338ca 55%,#6d28d9 100%);color:#fff;padding:36px 34px;display:flex;flex-direction:column;gap:14px}
+.lg-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.02em}
+.lg-o{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:#fff;color:#4f46e5;font-size:22px}
+.lg-to{font-size:30px;line-height:1.2;font-weight:800;letter-spacing:-.03em;margin:18px 0 0}
+.lg-to em{font-style:normal;color:#c7d2fe}
+.lg-mo{margin:0;color:#e0e7ff;font-size:15px}
+.lg-ds{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.lg-ds li{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:12px 14px;font-weight:600;font-size:14px}
+.lg-ds i{font-style:normal}
+#login .lg-card{flex:1 1 50%;width:auto;border-radius:0;border-top:0;box-shadow:none;padding:36px 34px}
+#login .lg-card h2{font-size:26px;font-weight:800;color:var(--ink);margin:0 0 12px}
+#login .lg-card input,#login .lg-card select{border:1px solid var(--line-strong)!important;background:#f5f6fa;border-radius:14px}
+#login .lg-card .btn{min-height:50px;text-transform:uppercase;letter-spacing:.12em;font-size:13px;border-radius:14px;margin-top:6px}
+@media (max-width:760px){
+  .lg-ben{display:none}
+  .lg-khung{border-radius:22px}
+  #login .lg-card{padding:26px 20px}
+  #login .lg-card h2::before{content:"⌂";display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:13px;background:var(--grad);color:#fff;font-size:22px;margin-bottom:14px}
+}
+/* hộp thoại khác (căn, đặt lịch) */
+.lg-card{border-radius:22px;border-top:0}
+#canModal,#dlModal{background:rgba(11,16,32,.6);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+/* màn chọn dự án */
+body[data-man="chon"],body[data-man="du-an"]{background:radial-gradient(60% 40% at 50% 0%,#eef0ff 0%,var(--bg) 70%)}
+#manChon h2{font-size:28px}
+.da-the{border-radius:20px;padding:20px;gap:8px}
+.da-the:hover{border-color:#a5b4fc;box-shadow:0 12px 30px rgba(79,70,229,.14);transform:translateY(-2px)}
+.da-the b{color:var(--ink);font-weight:800;letter-spacing:-.02em}
+.da-the.hub{border:0;background:linear-gradient(135deg,#4f46e5,#7e22ce);color:#fff;box-shadow:0 14px 34px rgba(79,70,229,.35)}
+.da-the.hub b,.da-the.hub .muted,.da-the.hub small,.da-the.hub span{color:#fff}
+.da-the.hub .badge{background:rgba(255,255,255,.18);color:#fff}
+/* nút nổi */
+#chatBtn{background:var(--grad);box-shadow:0 10px 26px rgba(79,70,229,.4)}
+#dlBtn{background:var(--grad);box-shadow:0 10px 26px rgba(79,70,229,.4)}
+#chat{border-radius:20px}
+#chat .hd{background:var(--grad)}
+.msg.me{background:var(--dong)}
+.td-o.h1{border-color:#a78bfa;background:linear-gradient(180deg,#f5f3ff,#fff)}
+tr.td-toi td{background:var(--navy-soft)}
+.kt.can-goi{border-left:4px solid var(--dong)}
+mark.ph{background:#ede9fe;color:#5b21b6}
+.da-the>span.small:not(.muted){color:var(--navy2);font-weight:700;margin-top:auto}
+.da-the:hover>span.small:not(.muted){text-decoration:underline}
+/* ================= THANH CHỌN BÊN TRÁI (27/09/2026, CEO lệnh "cho thanh chọn ở góc trái") =================
+   Ghi đè khối "ĐIỀU HƯỚNG ĐẦU TRANG": máy tính = cột trái cố định; điện thoại = nút ☰ góc trái đầu trang mở ngăn kéo. */
+#navMenu{display:none;flex:0 0 auto;width:40px;height:40px;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:rgba(255,255,255,.06);color:#fff;font-size:20px;line-height:1;cursor:pointer}
+#navMenu:hover{background:rgba(255,255,255,.14)}
+header.top .wrap{justify-content:flex-start}
+header.top .meta{margin-left:auto}
+nav.tabs{position:fixed;top:var(--cao-head);left:0;bottom:0;width:var(--rong-nav);z-index:25;background:var(--card);border-right:1px solid var(--line);box-shadow:none;overflow-y:auto;-webkit-backdrop-filter:none;backdrop-filter:none}
+nav.tabs .wrap{flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:3px;max-width:none;margin:0;padding:14px 12px 28px;overflow:visible;-webkit-mask-image:none;mask-image:none;scroll-snap-type:none}
+nav.tabs .nhom{display:block!important;width:auto;height:auto;background:none;margin:0;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding:16px 12px 6px}
+nav.tabs .nhom:first-child{padding-top:2px}
+body[data-vai="khach"] nav.tabs .nhom.chi-sale,body:not([data-vai="admin"]) nav.tabs .nhom.chi-admin{display:none!important}
+nav.tabs button{width:100%;min-height:44px;padding:9px 12px;border-radius:12px;gap:11px;font-size:14.5px;justify-content:flex-start}
+nav.tabs button i{width:22px;text-align:center;font-size:16px}
+main{max-width:1180px;margin:0 0 0 var(--rong-nav);padding:24px 28px 40px}
+footer.legal{max-width:1180px;margin:0 0 40px var(--rong-nav);padding:0 28px}
+@media (min-width:1500px){main,footer.legal{margin-left:calc(var(--rong-nav) + (100vw - var(--rong-nav) - 1180px)/2)}}
+@media (max-width:1023px){
+  #navMenu{display:inline-flex;align-items:center;justify-content:center}
+  header.top h1::before{display:none}
+  header.top .wrap{gap:10px}
+  body[data-man="csq"] #doiNguoi{display:none}   /* điện thoại, trong hub: "Đổi người dùng" nằm cuối ngăn kéo */
+  nav.tabs{width:min(290px,84vw);transform:translateX(-102%)!important;transition:transform .22s ease;box-shadow:6px 0 30px rgba(11,16,32,.25)}
+  body.nav-mo nav.tabs{transform:none!important}
+  #navNen{display:block!important;position:fixed;inset:0;z-index:24;background:rgba(11,16,32,.45)}
+  #navNen[hidden]{display:none!important}
+  main{margin-left:0;padding:16px 16px 32px}
+  footer.legal{margin-left:0;padding:0 16px}
+}
+body[data-man="chon"] #navMenu,body[data-man="du-an"] #navMenu{display:none!important}
+.nav-thoat{display:none;margin-top:18px;padding:10px 12px;border-top:1px solid var(--line);color:var(--mute);font-weight:600;text-decoration:none;font-size:14px}
+@media (max-width:1023px){.nav-thoat{display:block}}
+/* ---- in: bỏ khung app ---- */
+@media print{header.top,nav.tabs,#botBar,#chatBtn,#dlBtn{display:none!important}main,footer.legal{margin:0!important}}
+</style>
+
+<header class="top"><div class="wrap">
+  <button type="button" id="navMenu" aria-controls="nav" aria-expanded="false" aria-label="Mở danh mục">☰</button>
+  <h1 id="tieuDeHub">Capital Square <span>Đà Nẵng</span> · Hub tài liệu sale</h1>
+  <div class="meta"><span class="badge chi-sale">Nội bộ đội sale</span> <span class="ngay-dl">Dữ liệu <b id="ngayDl"></b> ·</span> <span id="nguoiDung"></span> <a href="#" id="doiNguoi" style="color:#f4ead6">Đổi người dùng</a> <button type="button" id="doiDuAn" class="chi-sale" style="margin-left:6px;border:1px solid rgba(255,255,255,.4);background:none;color:#fff;border-radius:99px;padding:3px 10px;font:inherit;font-size:12.5px;cursor:pointer">⇄ Dự án</button></div>
+</div></header>
+
+<!-- ĐĂNG NHẬP — HIỆN MẶC ĐỊNH (JS lỗi/tắt thì trang vẫn khoá; dữ liệu cũng không có trong HTML) -->
+<div id="login" role="dialog" aria-modal="true" aria-labelledby="lgTieuDe">
+ <div class="lg-khung">
+  <div class="lg-ben" aria-hidden="true">
+    <div class="lg-logo"><span class="lg-o">⌂</span>FBG Property</div>
+    <p class="lg-to">Giỏ hàng dự án<br><em>trong một chạm</em></p>
+    <p class="lg-mo">Bảng hàng, phiếu tính giá, chỉ căn và chính sách bán hàng — cập nhật mỗi sáng.</p>
+    <ul class="lg-ds"><li><i>🏷️</i>Giỏ hàng 11 dự án</li><li><i>⚡</i>Tự cập nhật 9:00 hằng ngày</li><li><i>🛡️</i>Duyệt từng tài khoản, từng máy</li></ul>
+  </div>
+  <div class="lg-card">
+    <h2 id="lgTieuDe">Chào mừng trở lại!</h2>
+    <p class="muted small" style="margin-top:-6px">Đăng nhập hub giỏ hàng dự án. Tài khoản mới cần quản lý duyệt trước khi xem.</p>
+    <form id="lgForm" novalidate>
+      <label class="lg-sr" for="lgVai">Anh chị là</label>
+      <select id="lgVai" required><option value="">Chọn…</option><option value="sales">Tôi là Sale</option><option value="khach">Tôi là Khách hàng</option></select>
+      <label class="lg-sr" for="lgTen">Họ tên</label><input type="text" id="lgTen" placeholder="vd: Nguyễn Văn An" autocomplete="name" required>
+      <label class="lg-sr" for="lgSdt">Số điện thoại</label><input type="tel" id="lgSdt" placeholder="vd: 0905 123 456" autocomplete="tel" inputmode="tel" required>
+      <label class="lg-sr" for="lgEmail">Email</label><input type="email" id="lgEmail" placeholder="vd: ten@gmail.com" autocomplete="email" required>
+      <button class="btn" id="lgGui">Vào hub</button>
+      <p class="small muted" style="margin:6px 0 0">Đã có tài khoản: nhập đúng số điện thoại. Lần đầu dùng máy mới, quản lý cần cho phép một lần.</p>
+    </form>
+    <div id="lgCho" hidden>
+      <div class="alert info"><b>Đang chờ quản lý duyệt.</b> <span id="lgChoLyDo">Yêu cầu đã gửi đi.</span> Khi được duyệt, anh chị bấm "Kiểm tra lại". Vừa duyệt xong có thể cần đợi thêm khoảng 1 phút.</div>
+      <button class="btn" id="lgKiemLai" type="button">Kiểm tra lại</button> <button class="btn ghost" id="lgThoat" type="button">Dùng số khác</button>
+    </div>
+    <p id="lgNap" hidden class="muted">Đang mở hub…</p>
+    <p id="lgErr" role="alert"></p>
+  </div>
+ </div>
+</div>
+
+<!-- MÀN CHỌN DỰ ÁN (sale/admin) — danh sách từ file giỏ hàng tổng hợp FBG, mỗi sheet 1 dự án -->
+<section id="manChon" class="man">
+  <div class="man-wrap">
+    <h2>Chọn dự án</h2>
+    <p class="small muted" id="chonGhiChu"></p>
+    <div class="grid" id="chonDs"></div>
+  </div>
+</section>
+<!-- MÀN GIỎ HÀNG DỰ ÁN KHÁC (bảng đọc thẳng từ sheet) -->
+<section id="manDuAn" class="man">
+  <div class="man-wrap">
+    <button type="button" class="btn ghost" id="veChon" style="margin-bottom:10px">← Danh sách dự án</button>
+    <div id="duAnWrap"></div>
+  </div>
+</section>
+<nav class="tabs" id="nav" aria-label="Mục của dự án"><div class="wrap" role="tablist">
+  <div class="nhom">Dự án</div>
+  <button role="tab" data-tab="bang-hang" aria-selected="true"><i>🏷️</i>Bảng hàng</button>
+  <button role="tab" data-tab="tong-quan"><i>🏠</i>Tổng quan</button>
+  <button role="tab" data-tab="toa"><i>🏢</i>Tòa &amp; mặt bằng</button>
+  <button role="tab" data-tab="chinh-sach"><i>📄</i>Chính sách</button>
+  <button role="tab" data-tab="lich-tt" class="chi-sale"><i>🗓️</i>Lịch thanh toán</button>
+  <button role="tab" data-tab="phap-ly"><i>⚖️</i>Pháp lý</button>
+  <button role="tab" data-tab="tai-lieu" class="chi-sale"><i>📁</i>Tài liệu gốc</button>
+  <div class="nhom chi-sale">Bán hàng</div>
+  <button role="tab" data-tab="khach-toi" class="chi-sale"><i>👥</i>Khách của tôi</button>
+  <button role="tab" data-tab="telesales" class="chi-sale"><i>📞</i>Telesales</button>
+  <button role="tab" data-tab="hoi-dap" class="chi-sale"><i>💬</i>Hỏi đáp</button>
+  <button role="tab" data-tab="thi-dua" class="chi-sale"><i>🏆</i>Thi đua</button>
+  <div class="nhom chi-admin">Quản trị</div>
+  <button role="tab" data-tab="kho" class="chi-admin"><i>🗂️</i>Kho khách</button>
+  <button role="tab" data-tab="bao-cao" class="chi-admin"><i>📊</i>Báo cáo</button>
+  <a href="#" id="doiNguoi2" class="nav-thoat">↩︎ Đổi người dùng</a>
+</div></nav>
+<div id="navNen" hidden></div>
+<!-- THANH DƯỚI (điện thoại): 4 mục dùng nhiều nhất theo vai + "Thêm" mở ngăn kéo — dựng bằng JS (dungThanhDuoi) -->
+<nav id="botBar" aria-label="Mục chính"></nav>
+
+<main>
+<!-- TỔNG QUAN -->
+<section class="tab" id="tab-tong-quan">
+  <div class="card chi-khach" style="border-color:var(--gold);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+    <div><h3 style="margin:0 0 4px">Xem tận mắt trước khi quyết định</h3><p class="small muted" style="margin:0">Hẹn xem nhà mẫu khoảng 30 phút, hoặc gọi video xem mặt bằng nếu anh chị ở xa.</p></div>
+    <button class="btn" type="button" data-mo-dl>📅 Đặt lịch xem nhà mẫu</button>
+  </div>
+  <div class="alert warn chi-sale"><b>Đọc trước khi tư vấn:</b> hub này gom tài liệu của đại lý và chủ đầu tư để anh chị tra nhanh. Chỗ nào gắn <span class="badge b-warn">cần kiểm</span> hoặc <span class="badge b-bad">mâu thuẫn</span> thì <b>không khẳng định với khách</b>, hỏi quản lý trước. Không hứa lợi nhuận, giá thuê hay mức tăng giá.</div>
+  <div class="facts" id="facts"></div>
+  <div class="grid" id="tqCards"></div>
+</section>
+
+<!-- TÒA & MẶT BẰNG -->
+<section class="tab" id="tab-toa" hidden>
+  <h2>Tòa &amp; mặt bằng căn hộ</h2>
+  <div class="chips" id="toaChips" role="group" aria-label="Chọn tòa"></div>
+  <div id="toaCard"></div>
+  <div class="row-toolbar">
+    <input type="search" id="mbSearch" placeholder="Tìm mã căn, vd C4-06">
+    <select id="mbLoai" aria-label="Lọc loại căn"><option value="">Mọi loại căn</option></select>
+  </div>
+  <div id="mbTables"></div>
+</section>
+
+<!-- BẢNG HÀNG -->
+<section class="tab" id="tab-bang-hang" hidden>
+  <h2>Bảng hàng</h2>
+  <div id="bhWrap"></div>
+</section>
+
+<!-- CHÍNH SÁCH -->
+<section class="tab" id="tab-chinh-sach" hidden>
+  <h2>Chính sách bán hàng</h2>
+  <div class="chips" id="csChips" role="group" aria-label="Lọc theo tòa"></div>
+  <div id="csList"></div>
+</section>
+
+<!-- LỊCH THANH TOÁN -->
+<section class="tab chi-sale" id="tab-lich-tt" hidden>
+  <h2>Lịch thanh toán tham khảo — tòa S4 Hudson Place</h2>
+  <div class="alert warn">Công cụ này <b>chỉ chia số tiền theo tỷ lệ % trong CSBH S4 (bản dự thảo 16/09/2026)</b> để anh chị nói chuyện với khách cho nhanh. Nó <b>không phải báo giá</b>. Giá lấy từ Stacking do quản lý gửi. Theo thông báo quỹ hàng, giá Stacking <b>đã trừ</b> quà tặng và chiết khấu của chính sách nền, <b>chưa trừ</b> ưu đãi Early Birds.</div>
+  <div class="card">
+    <div class="form-grid">
+      <label class="f">Tổng giá bán căn hộ gồm VAT, chưa KPBT (đồng)
+        <input type="text" inputmode="numeric" id="ltGia" placeholder="vd 5.200.000.000"></label>
+      <label class="f">Phương án
+        <select id="ltPa">
+          <option value="thuong">Thanh toán thường (tiến độ 9 đợt)</option>
+          <option value="vay">Vay ngân hàng (tới 70%)</option>
+          <option value="som100">Thanh toán sớm 100% giá CN HĐ</option>
+          <option value="som95">Thanh toán sớm 95% tổng giá (⚠️ tạm dừng tư vấn — chờ ý kiến pháp lý)</option>
+        </select></label>
+      <label class="f">Ngày ký TTĐCCN (dự kiến)
+        <input type="date" id="ltNgay"></label>
+    </div>
+    <button class="btn" id="ltTinh">Chia lịch thanh toán</button>
+  </div>
+  <div id="ltKq"></div>
+</section>
+
+<!-- PHÁP LÝ -->
+<section class="tab" id="tab-phap-ly" hidden>
+  <h2>Pháp lý dự án</h2>
+  <div id="plWrap"></div>
+</section>
+
+<!-- HỎI ĐÁP -->
+<section class="tab chi-sale" id="tab-hoi-dap" hidden>
+  <h2>Hỏi đáp cho sale</h2>
+  <div class="row-toolbar">
+    <input type="search" id="kbSearch" placeholder="Gõ câu khách hỏi, vd: người nước ngoài mua được không">
+    <select id="kbNhom" aria-label="Nhóm câu hỏi"><option value="">Mọi nhóm</option></select>
+  </div>
+  <div id="kbList"></div>
+</section>
+
+<!-- TELESALES (chỉ sale/admin — máy chủ không gửi TS cho vai khách) -->
+<section class="tab chi-sale" id="tab-telesales" hidden>
+  <h2>Kịch bản telesales</h2>
+  <div id="tsWrap"></div>
+</section>
+
+<!-- KHÁCH CỦA TÔI (sale/admin — máy chủ chỉ trả khách có sale_p = mình) -->
+<section class="tab chi-sale" id="tab-khach-toi" hidden>
+  <div class="row-toolbar" style="justify-content:space-between"><h2 style="margin:0">Khách của tôi</h2><button class="btn ghost" type="button" id="ktLamMoi">Làm mới</button></div>
+  <div class="facts" id="ktSo"></div>
+  <div class="chips" id="ktLoc"></div>
+  <div class="row-toolbar"><input type="search" id="ktQ" placeholder="Tìm tên hoặc số điện thoại"></div>
+  <div id="ktDs"><p class="muted">Đang tải…</p></div>
+</section>
+
+<!-- THI ĐUA (sale/admin) — điểm tính từ thao tác thật trong Khách của tôi -->
+<section class="tab chi-sale" id="tab-thi-dua" hidden>
+  <div class="row-toolbar" style="justify-content:space-between"><h2 style="margin:0">🏆 Thi đua đội sale</h2>
+    <div class="chips" id="tdKy" style="margin:0"><button class="chip" data-ky="tuan" aria-pressed="true">Tuần này</button><button class="chip" data-ky="thang" aria-pressed="false">Tháng này</button><button class="chip" data-ky="30" aria-pressed="false">30 ngày</button></div></div>
+  <div id="tdWrap"><p class="muted">Đang tải…</p></div>
+</section>
+
+<!-- KHO KHÁCH (chỉ admin) -->
+<section class="tab chi-admin" id="tab-kho" hidden>
+  <div class="row-toolbar" style="justify-content:space-between"><h2 style="margin:0">Kho khách</h2><button class="btn ghost" type="button" id="khoLamMoi">Làm mới</button></div>
+  <div class="facts" id="khoSo"></div>
+  <div class="card"><h3>📥 Nạp khách từ file</h3>
+    <p class="small muted" style="margin-top:-4px">Excel (.xlsx/.xls) hoặc CSV. Trang tự nhận cột tên, số điện thoại, nguồn, nhu cầu, ghi chú. Số trùng trong file hoặc đã có trong kho tự bỏ qua.</p>
+    <div class="form-grid">
+      <label class="f">File khách<input type="file" id="khoFile" accept=".xlsx,.xls,.csv,text/csv"></label>
+      <label class="f">Nguồn (ghi cho cả lô)<input type="text" id="khoNguon" maxlength="60" placeholder="vd: Data FBG 26/09, Ads Facebook T9"></label>
+      <label class="f">Chia khách<select id="khoChia"><option value="deu">Chia đều cho sale đã duyệt</option><option value="khong">Để chưa giao</option></select></label>
+    </div>
+    <label class="dl-dy" style="margin-bottom:10px"><input type="checkbox" id="khoHopPhap"><span>Tôi xác nhận danh sách này có nguồn hợp pháp và khách đã đồng ý được liên hệ tư vấn (Luật Bảo vệ dữ liệu cá nhân 2025).</span></label>
+    <div id="khoXemTruoc"></div>
+  </div>
+  <div class="card"><h3>Theo sale</h3><div id="khoTheoSale"></div></div>
+  <div class="card"><h3>Danh sách khách</h3>
+    <div class="row-toolbar"><input type="search" id="khoQ" placeholder="Tìm tên / SĐT"><select id="khoLocSale"></select><select id="khoLocTT"></select></div>
+    <div class="row-toolbar"><select id="khoGiaoCho"></select><button class="btn ghost" type="button" id="khoGiao">Giao khách đã chọn</button></div>
+    <div id="khoDs"></div>
+  </div>
+</section>
+
+<!-- TÀI LIỆU GỐC -->
+<section class="tab chi-sale" id="tab-tai-lieu" hidden>
+  <h2>Tài liệu gốc (kit Drive của đại lý)</h2>
+  <div class="alert info">Các thư mục dưới đây do đại lý phân phối chia sẻ. Anh chị cần quyền truy cập Google Drive để mở. Bảng hàng trên Drive <b>đang trống</b>, giá lấy qua Stacking.</div>
+  <div class="grid" id="tlList"></div>
+</section>
+
+<section class="tab chi-admin" id="tab-bao-cao" hidden>
+  <div class="row-toolbar" style="justify-content:space-between">
+    <h2 style="margin:0">Báo cáo hiệu suất đội sale</h2>
+    <div class="row-toolbar" style="margin:0">
+      <select id="bcNgay" aria-label="Khoảng thời gian"><option value="7">7 ngày</option><option value="14">14 ngày</option><option value="30">30 ngày</option></select>
+      <button class="btn ghost" id="bcLamMoi" type="button">Làm mới</button>
+    </div>
+  </div>
+  <div id="bcWrap"><p class="muted">Đang tải…</p></div>
+</section>
+</main>
+<div id="bcTip" hidden></div>
+<footer class="legal" id="legal"></footer>
+
+<button id="dlBtn" class="chi-khach" type="button" data-mo-dl aria-haspopup="dialog">📅 Đặt lịch xem nhà mẫu</button>
+<div id="canModal" hidden role="dialog" aria-modal="true" aria-label="Hồ sơ căn">
+  <div class="lg-card" style="width:min(760px,100%);max-height:calc(100vh - 32px);overflow-y:auto;position:relative">
+    <button type="button" id="canDong" aria-label="Đóng" style="position:absolute;top:8px;right:10px;border:0;background:none;font-size:26px;cursor:pointer;color:var(--mute)">×</button>
+    <div id="canNoiDung"></div>
+  </div>
+</div>
+<div id="dlModal" hidden role="dialog" aria-modal="true" aria-labelledby="dlTieuDe">
+  <div class="lg-card">
+    <h2 id="dlTieuDe" style="margin-top:0">Đặt lịch xem nhà mẫu</h2>
+    <form id="dlForm" novalidate>
+      <div class="dl-chon" role="radiogroup" aria-label="Hình thức">
+        <label><input type="radio" name="dlHt" value="nha-mau" checked>🏢 Xem nhà mẫu</label>
+        <label><input type="radio" name="dlHt" value="video">📱 Gọi video</label>
+      </div>
+      <label class="f">Ngày anh chị muốn hẹn<input type="date" id="dlNgay" required></label>
+      <div class="dl-chon" role="radiogroup" aria-label="Buổi">
+        <label><input type="radio" name="dlBuoi" value="sang" checked>Sáng</label>
+        <label><input type="radio" name="dlBuoi" value="chieu">Chiều</label>
+        <label><input type="radio" name="dlBuoi" value="toi">Tối</label>
+      </div>
+      <label class="f">Anh chị quan tâm (không bắt buộc)<input type="text" id="dlGhiChu" maxlength="160" placeholder="vd: căn 2 phòng ngủ tòa Hudson, ngân sách…"></label>
+      <p class="small muted" style="margin:0" id="dlNoiDung">Nhà mẫu ở ngã tư Ngô Quyền – Nguyễn Công Trứ, Đà Nẵng (theo tài liệu dự án). Giờ chính xác chuyên viên sẽ gọi xác nhận với anh chị.</p>
+      <label class="dl-dy"><input type="checkbox" id="dlDongY"><span>Tôi đồng ý để chuyên viên tư vấn dự án gọi hoặc nhắn Zalo tới số điện thoại tôi đã đăng ký, để xác nhận lịch hẹn này.</span></label>
+      <button class="btn" id="dlGui">Gửi yêu cầu đặt lịch</button>
+      <button class="btn ghost" type="button" id="dlDong">Để sau</button>
+      <p id="dlErr" role="alert" style="color:var(--bad);font-size:14px;margin:0;min-height:1em"></p>
+    </form>
+    <div id="dlXong" hidden>
+      <div class="alert info"><b>Đã gửi yêu cầu.</b> Chuyên viên sẽ liên hệ số điện thoại anh chị đã đăng ký để xác nhận giờ hẹn. Cảm ơn anh chị.</div>
+      <button class="btn" type="button" id="dlDong2">Đóng</button>
+    </div>
+  </div>
+</div>
+<button id="chatBtn" class="chi-sale" aria-controls="chat" aria-label="Hỏi trợ lý">💬<span> Hỏi trợ lý</span></button>
+<div id="chat" hidden role="dialog" aria-label="Trợ lý tài liệu Capital Square">
+  <div class="hd"><b>Trợ lý tài liệu</b><button id="chatClose" aria-label="Đóng">×</button></div>
+  <div id="chatLog"></div>
+  <form id="chatForm"><input type="text" id="chatIn" placeholder="Hỏi về tòa, chính sách, pháp lý…" autocomplete="off"><button class="btn">Gửi</button></form>
+</div>
+
+<script>
+/* ===== DỮ LIỆU — KHÔNG nằm trong HTML. Máy chủ (site/_worker.js) trả qua /api/du-lieu sau khi đăng nhập,
+   đã cắt theo vai. Xem thử không cần máy chủ: build_site.py --xem-thu bơm dữ liệu vào chỗ XEM_THU bên dưới ===== */
+let TOA = [], MB = {}, CS = [], KB = [], UNITS = [], META = {}, TS = {};
+const XEM_THU = /*__XEM_THU__*/null;
+
+/* ===== ĐĂNG NHẬP (mô hình tailieuduan.com: SĐT + tên + email + vai → CEO duyệt) ===== */
+const $ = s => document.querySelector(s);
+const LS = { get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }, set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }, del(k){ try{ localStorage.removeItem(k); }catch(e){} } };
+async function api(duong, than){
+  const r = await fetch(duong, { method: than ? 'POST' : 'GET', headers: { 'content-type':'application/json', 'x-csq-tk': LS.get('csq_tk') || '' }, body: than ? JSON.stringify(than) : undefined });
+  let d = {}; try{ d = await r.json(); }catch(e){}
+  return { st: r.status, ...d };
+}
+function manLogin(buoc, loi){
+  $('#login').hidden = false;
+  $('#lgForm').hidden = buoc !== 'form'; $('#lgCho').hidden = buoc !== 'cho'; $('#lgNap').hidden = buoc !== 'nap';
+  $('#lgErr').textContent = loi || '';
+}
+const LOI = { sdt:'Số điện thoại chưa đúng (10 số, bắt đầu bằng 0).', ten:'Nhập họ tên (ít nhất 2 ký tự).', email:'Email chưa đúng.', vai:'Chọn anh chị là Sale hay Khách hàng.', tuchoi:'Tài khoản này đã bị từ chối. Liên hệ quản lý.', mang:'Không kết nối được máy chủ. Thử lại sau ít phút.', 'nhieu-tb':'Tài khoản này đang có nhiều thiết bị chờ quản lý cho phép. Liên hệ quản lý.', 'qua-tai':'Hôm nay hệ thống đã nhận đủ số đăng ký mới. Anh chị thử lại vào ngày mai hoặc liên hệ quản lý.' };
+async function vaoHub(){
+  manLogin('nap');
+  const r = await api('/api/du-lieu').catch(() => ({ st: 0 }));
+  if(r.ok){ return moHub(r); }
+  if(r.st === 403 && r.err === 'cho') return manLogin('cho');
+  if(r.st === 403 && r.err === 'tuchoi'){ LS.del('csq_tk'); return manLogin('form', LOI.tuchoi); }
+  if(r.st === 0) return manLogin('form', LOI.mang);
+  LS.del('csq_tk'); manLogin('form');
+}
+function moHub(r){
+  const d = r.du_lieu || {};
+  TOA = d.TOA || []; TS = d.TS || {}; MB = d.MB || {}; CS = d.CS || []; KB = d.KB || []; UNITS = d.UNITS || []; META = d.META || {};
+  document.body.dataset.vai = r.vai || 'sales';
+  $('#nguoiDung').textContent = (r.s || '') + ' · ' + ({ khach:'Khách hàng', admin:'Quản trị' }[r.vai] || 'Sale');
+  $('#login').hidden = true;
+  EV_TK = LS.get('csq_tk');
+  DU_AN = d.DU_AN || { du_an: [] };
+  track('vao', r.vai);
+  dungThanhDuoi(r.vai);
+  veTrang();
+  if(r.vai === 'khach' || !(DU_AN.du_an || []).length) datMan('csq'); else moChon();
+}
+$('#lgForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const b = { vai: $('#lgVai').value, s: $('#lgTen').value.trim(), p: $('#lgSdt').value.trim(), e: $('#lgEmail').value.trim() };
+  if(!b.vai) return manLogin('form', LOI.vai);
+  if(b.s.length < 2) return manLogin('form', LOI.ten);
+  if(!/^(0|\+?84)\d{9}$/.test(b.p.replace(/[\s.]/g,''))) return manLogin('form', LOI.sdt);
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(b.e)) return manLogin('form', LOI.email);
+  $('#lgGui').disabled = true;
+  const r = await api('/api/dang-ky', b).catch(() => ({ st: 0 }));
+  $('#lgGui').disabled = false;
+  if(!r.ok) return manLogin('form', LOI[r.err] || (r.st === 0 ? LOI.mang : 'Có lỗi, thử lại.'));
+  LS.set('csq_tk', r.tk); LS.set('csq_ten', b.s);
+  $('#lgChoLyDo').textContent = r.may_moi ? 'Số này đã có tài khoản. Vì bảo mật, mỗi thiết bị mới cần quản lý cho phép trước khi xem.' : 'Yêu cầu đã gửi đi.';
+  vaoHub();
+});
+$('#lgKiemLai').onclick = vaoHub;
+async function dangXuat(){ guiEv(); EV_TK = null; await api('/api/dang-xuat', {}).catch(() => {}); LS.del('csq_tk'); location.hash = ''; location.reload(); }
+$('#lgThoat').onclick = dangXuat;
+$('#doiNguoi').onclick = $('#doiNguoi2').onclick = e => { e.preventDefault(); dongNav(); dangXuat(); };
+if(LS.get('csq_ten')) $('#lgTen').value = LS.get('csq_ten');
+
+/* ===== GHI HOẠT ĐỘNG → /api/act (nguồn số cho tab Báo cáo). Gom lô: 40 sự kiện hoặc 3 phút hoặc khi rời trang.
+   Máy chủ trần 20 lô/người/ngày (giữ hạn mức KV cho đăng nhập). Bản xem thử (XEM_THU) không ghi. ===== */
+const HANG_EV = [];
+let EV_TK = null; // token CHỐT lúc vào hub — đổi người dùng thì lô cũ không bị ghi sang người mới
+function track(e, d, id){
+  // GA4 qua GTM-MWQC59GP: chỉ tên sự kiện + nhãn không định danh (tab, mã tòa, phương án). KHÔNG đẩy câu hỏi (có thể chứa tên/SĐT khách).
+  try{ (window.dataLayer = window.dataLayer || []).push({ event: 'hub_' + e, hub_nhan: ['tab','toa','lich','cs','hen','vao'].includes(e) ? String(d || '').slice(0,40) : undefined, hub_vai: document.body.dataset.vai || undefined }); }catch(_){}
+  if(XEM_THU || !EV_TK) return; HANG_EV.push({ e, d: d == null ? '' : String(d).slice(0,160), id: id || undefined }); if(HANG_EV.length >= 40) guiEv(); }
+function guiEv(beacon){
+  if(!HANG_EV.length || !EV_TK) return;
+  const than = JSON.stringify({ tk: EV_TK, ev: HANG_EV.splice(0) });
+  if(beacon && navigator.sendBeacon){ navigator.sendBeacon('/api/act', new Blob([than], { type:'text/plain' })); return; }
+  fetch('/api/act', { method:'POST', body: than, keepalive: true }).catch(() => {});
+}
+setTimeout(function nhip(){ guiEv(); setTimeout(nhip, 180000); }, 180000);
+addEventListener('visibilitychange', () => { if(document.visibilityState === 'hidden') guiEv(true); });
+addEventListener('pagehide', () => guiEv(true));
+
+/* ===== ĐẶT LỊCH XEM NHÀ MẪU (vai khách) → POST /api/dat-lich: máy chủ lưu KV trước, rồi báo Telegram (checklist web mới) ===== */
+function moDatLich(){
+  const nd = new Date(Date.now() + 7*3600e3), mai = new Date(nd.getTime() + 86400e3);
+  const iso = d => d.toISOString().slice(0,10);
+  $('#dlNgay').min = iso(nd); $('#dlNgay').max = iso(new Date(nd.getTime() + 60*86400e3));
+  if(!$('#dlNgay').value) $('#dlNgay').value = iso(mai);
+  $('#dlForm').hidden = false; $('#dlXong').hidden = true; $('#dlErr').textContent = '';
+  $('#dlModal').hidden = false; $('#dlNgay').focus();
+  track('tab', 'dat-lich-mo');
+}
+function dongDatLich(){ $('#dlModal').hidden = true; }
+document.addEventListener('click', e => { if(e.target.closest('[data-mo-dl]')) moDatLich(); });
+$('#dlDong').onclick = dongDatLich; $('#dlDong2').onclick = dongDatLich;
+$('#dlModal').addEventListener('click', e => { if(e.target.id === 'dlModal') dongDatLich(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && !$('#dlModal').hidden) dongDatLich(); });
+document.querySelectorAll('input[name=dlHt]').forEach(r => r.onchange = () => {
+  const video = document.querySelector('input[name=dlHt]:checked').value === 'video';
+  $('#dlTieuDe').textContent = video ? 'Đặt lịch gọi video' : 'Đặt lịch xem nhà mẫu';
+  $('#dlNoiDung').textContent = video ? 'Chuyên viên sẽ gọi video qua Zalo, mở mặt bằng và ảnh 360 dự án cho anh chị xem, khoảng 20 phút.' : 'Nhà mẫu ở ngã tư Ngô Quyền – Nguyễn Công Trứ, Đà Nẵng (theo tài liệu dự án). Giờ chính xác chuyên viên sẽ gọi xác nhận với anh chị.';
+});
+$('#dlForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const b = { ht: document.querySelector('input[name=dlHt]:checked').value, ngay: $('#dlNgay').value, buoi: document.querySelector('input[name=dlBuoi]:checked').value, ghi_chu: $('#dlGhiChu').value.trim(), dong_y: $('#dlDongY').checked };
+  if(!b.ngay) return $('#dlErr').textContent = 'Chọn ngày anh chị muốn hẹn.';
+  if(!b.dong_y) return $('#dlErr').textContent = 'Anh chị tick ô đồng ý để chuyên viên liên hệ xác nhận lịch.';
+  $('#dlGui').disabled = true;
+  const r = XEM_THU ? { ok: true } : await api('/api/dat-lich', b).catch(() => ({ st: 0 }));
+  $('#dlGui').disabled = false;
+  if(!r.ok) return $('#dlErr').textContent = ({ ngay: 'Ngày chưa hợp lệ (từ hôm nay tới 60 ngày tới).', nhieu: 'Hôm nay anh chị đã gửi đủ số lần đặt lịch. Chuyên viên sẽ liên hệ sớm ạ.', 'dong-y': 'Anh chị tick ô đồng ý giúp em.' }[r.err]) || 'Chưa gửi được, anh chị thử lại sau ít phút.';
+  try{ (window.dataLayer = window.dataLayer || []).push({ event: 'generate_lead', hub_nhan: b.ht }); }catch(_){}
+  $('#dlForm').hidden = true; $('#dlXong').hidden = false; $('#dlGhiChu').value = ''; $('#dlDongY').checked = false;
+});
+
+/* ===== CHỌN DỰ ÁN — màn đầu tiên sau đăng nhập (sale/admin). Khách vào thẳng Capital Square. ===== */
+// tiện ích dùng chung cho màn chọn dự án (veTrang() có bản riêng cùng tên — che bản này bên trong, không xung đột)
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const bo_dau = s => String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase();
+const ngayVN = iso => { if(!iso) return '—'; const [y,m,d] = String(iso).split('-'); return d ? `${d}/${m}/${y}` : iso; };
+let DU_AN = { du_an: [] };
+function datMan(m, ten){
+  document.body.dataset.man = m;
+  $('#tieuDeHub').innerHTML = m === 'csq' ? 'Capital Square <span>Đà Nẵng</span><em class="phu-tieu-de" style="font-style:normal"> · Hub tài liệu sale</em>' : m === 'chon' ? 'Hub dự án <span>FBG</span><em class="phu-tieu-de" style="font-style:normal"> · Chọn dự án</em>' : esc(ten || '') + '<em class="phu-tieu-de" style="font-style:normal"> · Giỏ hàng</em>';
+  scrollTo(0, 0);
+}
+function moChon(){
+  const ds = (DU_AN.du_an || []);
+  $('#chonGhiChu').innerHTML = `${ds.length} dự án · giỏ hàng tổng hợp FBG cập nhật <b>${ngayVN(DU_AN.cap_nhat)}</b>. Capital Square có hub đầy đủ; dự án khác hiện bảng hàng từ file.`;
+  $('#chonDs').innerHTML = ds.slice().sort((a, b) => (b.co_hub - a.co_hub) || (b.so_can - a.so_can)).map(p => `<button type="button" class="da-the ${p.co_hub ? 'hub' : ''}" data-duan="${esc(p.slug)}" ${!p.so_can && !p.co_hub ? 'disabled' : ''}>
+      <b>${esc(p.ten)}</b>
+      <span class="small muted">${p.so_can ? p.so_can + ' căn trong giỏ' : 'Giỏ hàng đang trống'}${p.ngay ? ' · cập nhật ' + esc(p.ngay) : ''}</span>
+      ${p.co_hub ? '<span class="badge">Hub đầy đủ: tài liệu, chính sách, kho khách, thi đua</span>' : p.so_can ? '<span class="small">Xem bảng hàng →</span>' : ''}
+    </button>`).join('') || '<p class="muted">Chưa có danh sách dự án.</p>';
+  datMan('chon'); LS.set('csq_man', 'chon'); track('tab', 'chon-du-an');
+}
+function moDuAn(slug){
+  const p = (DU_AN.du_an || []).find(x => x.slug === slug); if(!p) return moChon();
+  if(p.co_hub){ datMan('csq'); LS.set('csq_man', 'csq'); track('tab', 'du-an-capital-square'); const bh = document.querySelector('nav.tabs [data-tab="bang-hang"]'); if(bh) bh.click(); return; }   // vào hub → Bảng hàng là màn chính
+  track('tab', 'du-an-' + slug);
+  const laSo = v => /^-?[\d.,]+$/.test(v) && /\d/.test(v);
+  $('#duAnWrap').innerHTML = `<h2 style="margin:0 0 4px">${esc(p.ten)}</h2>
+    <p class="small muted">${p.so_can} căn · ${p.ngay ? 'bảng giá ghi ngày ' + esc(p.ngay) + ' · ' : ''}file giỏ hàng FBG cập nhật ${ngayVN(DU_AN.cap_nhat)} · số liệu hiển thị đúng như trong file — kiểm lại với quản lý trước khi báo khách.</p>
+    <div class="row-toolbar"><input type="search" id="daQ" placeholder="Tìm mã căn, tòa, loại căn…"></div>
+    <div id="daBang"></div>`;
+  const ve = () => {
+    const q = bo_dau($('#daQ').value.trim());
+    $('#daBang').innerHTML = p.bang.map(b => {
+      const hang = b.dong.filter(r => !q || bo_dau(Object.values(r).join(' ')).includes(q));
+      return `${b.tieu_de ? `<h3 style="margin-top:14px">${esc(b.tieu_de)}</h3>` : ''}<div class="tbl-wrap" style="margin-bottom:6px"><table><thead><tr>${b.cot.map(c => `<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>${hang.map(r => `<tr>${b.cot.map(c => { const v = r[c] || ''; return (p.cot_link || []).includes(c) ? `<td>${v ? `<a href="${esc(v)}" target="_blank" rel="noopener">Mở ↗</a>` : ''}</td>` : `<td class="${laSo(v) ? 'num' : ''}">${esc(v)}</td>`; }).join('')}</tr>`).join('') || `<tr><td colspan="${b.cot.length}" class="muted">Không có căn khớp.</td></tr>`}</tbody></table></div><p class="small muted">${hang.length}/${b.dong.length} căn</p>`;
+    }).join('');
+  };
+  ve(); $('#daQ').oninput = ve;
+  datMan('du-an', p.ten); LS.set('csq_man', 'du-an');
+}
+$('#manChon').addEventListener('click', e => { const b = e.target.closest('[data-duan]'); if(b && !b.disabled) moDuAn(b.dataset.duan); });
+$('#veChon').onclick = moChon;
+$('#doiDuAn').onclick = moChon;
+
+/* ===== ĐIỀU HƯỚNG ĐIỆN THOẠI: thanh dưới 4 mục theo vai + "Thêm" (mở ngăn kéo = thanh bên) ===== */
+const NHAN_NGAN = { 'bang-hang':'Bảng hàng', 'khach-toi':'Khách', telesales:'Gọi khách', 'thi-dua':'Thi đua', kho:'Kho khách', 'bao-cao':'Báo cáo', 'tong-quan':'Tổng quan', 'chinh-sach':'Chính sách', 'phap-ly':'Pháp lý' };
+const MUC_DUOI = { sales: ['bang-hang','khach-toi','telesales','thi-dua'], admin: ['bang-hang','khach-toi','kho','bao-cao'], khach: ['tong-quan','bang-hang','chinh-sach','phap-ly'] };
+function dungThanhDuoi(vai){
+  const ds = MUC_DUOI[vai] || MUC_DUOI.sales;
+  $('#botBar').innerHTML = ds.map(t => { const b = document.querySelector(`nav.tabs [data-tab="${t}"]`); if(!b) return ''; const i = b.querySelector('i'); return `<button type="button" data-bot="${t}"><i>${i ? i.textContent : '•'}</i><span>${esc(NHAN_NGAN[t] || b.textContent.replace(i ? i.textContent : '', '').trim())}</span></button>`; }).join('')
+    + `<button type="button" data-bot="__them" aria-controls="nav" aria-expanded="false"><i>☰</i><span>Thêm</span></button>`;
+}
+function dongNav(){ document.body.classList.remove('nav-mo'); $('#navNen').hidden = true; document.querySelectorAll('#botBar [data-bot="__them"],#navMenu').forEach(t => t.setAttribute('aria-expanded','false')); }
+function moNav(){ document.body.classList.add('nav-mo'); $('#navNen').hidden = false; document.querySelectorAll('#botBar [data-bot="__them"],#navMenu').forEach(t => t.setAttribute('aria-expanded','true')); const a = document.querySelector('nav.tabs [aria-selected=true]'); if(a) a.focus(); }
+$('#navMenu').onclick = () => document.body.classList.contains('nav-mo') ? dongNav() : moNav();
+$('#botBar').addEventListener('click', e => {
+  const b = e.target.closest('[data-bot]'); if(!b) return;
+  if(b.dataset.bot === '__them') return document.body.classList.contains('nav-mo') ? dongNav() : moNav();
+  const nt = document.querySelector(`nav.tabs [data-tab="${b.dataset.bot}"]`); if(nt) nt.click();
+});
+$('#navNen').onclick = dongNav;
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && document.body.classList.contains('nav-mo')) dongNav(); });
+function dongBoDuoi(id){ const nb = document.querySelector(`nav.tabs [data-tab="${id}"]`), w = document.querySelector('nav.tabs .wrap'); if(nb && w && nb.scrollIntoView) nb.scrollIntoView({ block:'nearest' }); /* thanh bên: mục đang mở luôn trong tầm nhìn */ document.querySelectorAll('#botBar [data-bot]').forEach(b => { if(b.dataset.bot === id) b.setAttribute('aria-current','page'); else b.removeAttribute('aria-current'); }); dongNav(); }
+
+function veTrang(){
+/* ===== TIỆN ÍCH ===== */
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const bo_dau = s => String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase();
+const vnd = n => Math.round(n).toLocaleString('vi-VN') + ' đ';
+const ty = n => (n/1e9).toLocaleString('vi-VN',{maximumFractionDigits:3}) + ' tỷ';
+const m2 = n => n == null ? '—' : Number(n).toLocaleString('vi-VN',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' m²';
+const ngayVN = iso => { if(!iso) return '—'; const [y,m,d] = String(iso).split('-'); return d ? `${d}/${m}/${y}` : iso; };
+const arr = x => Array.isArray(x) ? x : (x == null || x === '' ? [] : [x]);
+const HOM_NAY = new Date(Date.now() + 7*3600e3).toISOString().slice(0,10);   // ngày giờ VN — ưu đãi có hạn tự ẩn theo ngày này
+const nguonHTML = n => arr(n).length ? `<div class="src">Nguồn: ${arr(n).map(esc).join(' · ')}</div>` : '';
+const MUC = {'xac-minh':['đã đối chiếu','b-ok'],'can-kiem':['cần kiểm','b-warn'],'mau-thuan':['mâu thuẫn','b-bad']};
+const TT = {'ban-hanh':['Ban hành','b-ok'],'du-thao':['Dự thảo','b-warn'],'het-hieu-luc':['Hết hiệu lực','b-mute']};
+
+$('#ngayDl').textContent = ngayVN(META.ngay_du_lieu);
+
+/* ===== TAB ===== */
+function openTab(id){
+  document.querySelectorAll('nav.tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.tab === id));
+  dongBoDuoi(id); scrollTo(0, 0);
+  document.querySelectorAll('section.tab').forEach(s => s.hidden = s.id !== 'tab-' + id);
+  try{ localStorage.setItem('csq_tab', id); }catch(e){}
+  track('tab', id);
+  if(id === 'bao-cao') taiBaoCao();
+  if(id === 'khach-toi') taiKT();
+  if(id === 'thi-dua') taiTD();
+  if(id === 'kho') taiKho();
+  if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
+}
+document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => openTab(b.dataset.tab));
+
+/* ===== TỔNG QUAN ===== */
+(function(){
+  const du = META.du_an || {};
+  const f = [
+    [TOA.length + ' tòa', 'đã có hồ sơ trên hub'],
+    [du.dien_tich || '—', 'diện tích đất 2 dự án (công văn Sở XD)'],
+    [du.co_cau || '1PN – 2PN – 3PN', 'cơ cấu sản phẩm'],
+    [CS.filter(c => c.trang_thai !== 'het-hieu-luc').length + ' CSBH', 'đang áp dụng / dự thảo'],
+  ];
+  $('#facts').innerHTML = f.map(([b,s]) => `<div class="fact"><b>${esc(b)}</b><small>${esc(s)}</small></div>`).join('');
+  const cards = arr(META.the_tong_quan);
+  $('#tqCards').innerHTML = cards.map(c => `<div class="card"><h3>${esc(c.tieu_de)}</h3>${c.html}${nguonHTML(c.nguon)}</div>`).join('');
+  $('#tqCards').querySelectorAll('[data-het]').forEach(e => { if(HOM_NAY > e.dataset.het) e.remove(); });
+})();
+
+/* ===== TÒA & MẶT BẰNG ===== */
+let toaChon = (TOA.find(t => t.ma === 'S4') || TOA[0] || {}).ma;
+function renderToaChips(){
+  $('#toaChips').innerHTML = TOA.map(t => `<button class="chip" data-ma="${esc(t.ma)}" aria-pressed="${t.ma===toaChon}">${esc(t.ma)}${t.ten ? ' · ' + esc(t.ten) : ''}</button>`).join('');
+  $('#toaChips').querySelectorAll('.chip').forEach(b => b.onclick = () => { toaChon = b.dataset.ma; track('toa', toaChon); renderToa(); });
+}
+function renderToa(){
+  renderToaChips();
+  const t = TOA.find(x => x.ma === toaChon); if(!t){ $('#toaCard').innerHTML=''; return; }
+  const cv = arr(t.cong_van_du_dk_ban);
+  const khach = document.body.dataset.vai === 'khach';
+  const row = (k,v) => v == null || v === '' ? '' : `<tr><th>${k}</th><td>${v}</td></tr>`;
+  const hinhThuc = {'chuyen-nhuong-hdmb':'<span class="badge b-warn">Chuyển nhượng HĐMB</span> khách ký với Bên Bán (theo chính sách bán hàng, Bên Bán đã ký HĐMB với CĐT), không ký thẳng với CĐT','mua-truc-tiep-cdt':'Ký HĐMB với chủ đầu tư','chua-ro':'<span class="badge b-mute">chưa rõ</span>'}[t.hinh_thuc] || esc(t.hinh_thuc||'');
+  const mpl = t.ma_phap_ly ? `${esc(t.ma_phap_ly)} <span class="badge ${t.ma_phap_ly_do_tin==='xac-minh'?'b-ok':'b-warn'}">${t.ma_phap_ly_do_tin==='xac-minh'?'đã đối chiếu':'suy luận'}</span>` : '<span class="muted">chưa có nguồn nối</span>';
+  $('#toaCard').innerHTML = `<div class="card"><h3>${esc(t.ma)} — ${esc(t.ten||'')}</h3>
+    <div class="tbl-wrap"><table><tbody>
+    ${row('Phân khu', esc(t.phan_khu))}${row('Dự án pháp lý', esc(t.du_an_phap_ly))}${khach ? '' : row('Mã pháp lý', mpl)}
+    ${row('Chủ đầu tư', esc(t.cdt))}${row('Bên Bán', esc(t.ben_ban))}${row('Hình thức mua', hinhThuc)}
+    ${row('Số tầng', t.so_tang ?? '')}${row('Số căn', t.so_can ?? '')}${row('Vị trí', esc(t.vi_tri))}
+    ${row('Người nước ngoài', esc(t.nguoi_nuoc_ngoai))}
+    ${khach ? '' : row('Đủ điều kiện bán', cv.length ? cv.map(c => `CV <b>${esc(c.so)}</b> ngày ${ngayVN(c.ngay)}${c.noi_dung ? ' — ' + esc(c.noi_dung) : ''}`).join('<br>') : '<span class="muted">chưa thấy văn bản trong kit</span>')}
+    </tbody></table></div>
+    ${arr(t.ghi_chu).length ? `<ul class="tight small">${arr(t.ghi_chu).map(g => `<li>⚠️ ${esc(g)}</li>`).join('')}</ul>` : ''}
+    ${nguonHTML(t.nguon)}</div>`;
+  renderMB();
+}
+function renderMB(){
+  const q = bo_dau($('#mbSearch').value.trim()), loai = $('#mbLoai').value;
+  const m = MB[toaChon];
+  if(!m || !arr(m.mat_bang_loai).length){
+    $('#mbTables').innerHTML = `<div class="alert warn">Chưa có số liệu mặt bằng tòa ${esc(toaChon)} ở dạng đọc được.${m && m.canh_bao ? ' ' + esc(m.canh_bao) : ''}</div>`;
+    return;
+  }
+  let html = m.canh_bao ? `<div class="alert warn">${esc(m.canh_bao)}</div>` : '';
+  for(const mb of m.mat_bang_loai){
+    const can = arr(mb.can).filter(c => (!loai || c.loai === loai) && (!q || bo_dau(c.ma).includes(q)));
+    if(!can.length) continue;
+    html += `<h3>${esc(mb.ten)}${mb.tang_ap_dung ? ` <span class="muted small">· tầng ${esc(mb.tang_ap_dung)}</span>` : ''}</h3>
+    <div class="tbl-wrap" style="margin-bottom:14px"><table><thead><tr><th>Mã căn</th><th>Loại</th><th class="num">Thông thủy</th><th class="num">Tim tường</th><th>Ghi chú</th></tr></thead><tbody>
+    ${can.map(c => `<tr><td><b>${esc(c.ma)}</b></td><td>${esc(c.loai || '—')}${c.loai && c.loai_do_tin === 'suy-theo-dien-tich' ? ' <span class="badge b-warn">suy</span>' : ''}</td><td class="num">${m2(c.thong_thuy)}</td><td class="num">${m2(c.tim_tuong)}</td><td class="small">${c.chac_chan === false ? '<span class="badge b-warn">ghép chưa chắc</span> ' : ''}${esc(c.ghi_chu||'')}</td></tr>`).join('')}
+    </tbody></table></div>`;
+  }
+  html += nguonHTML(m.nguon);
+  $('#mbTables').innerHTML = html || '<p class="muted">Không có căn khớp bộ lọc.</p>';
+}
+(function(){
+  const loais = new Set(); Object.values(MB).forEach(m => arr(m.mat_bang_loai).forEach(l => arr(l.can).forEach(c => c.loai && loais.add(c.loai))));
+  $('#mbLoai').innerHTML += [...loais].sort().map(l => `<option>${esc(l)}</option>`).join('');
+  $('#mbSearch').oninput = renderMB; $('#mbLoai').onchange = renderMB;
+  renderToa();
+})();
+
+/* ===== BẢNG HÀNG + HỒ SƠ CĂN (data/units.json ← giỏ hàng FBG; ảnh qua /api/anh có phiên) ===== */
+const TEN_PA = { 'tien-do':'Thanh toán theo tiến độ', vay:'Vay ngân hàng (hỗ trợ lãi suất)', tts:'Thanh toán nhanh 95%' };
+const laKhach = () => document.body.dataset.vai === 'khach';
+const tien = n => n == null ? '<span class="muted">—</span>' : Number(n).toLocaleString('vi-VN');
+const tyGon = n => n == null ? '—' : (n/1e9).toLocaleString('vi-VN',{maximumFractionDigits:2}) + ' tỷ';
+async function taiAnh(img, f){
+  if(!f){ img.replaceWith(Object.assign(document.createElement('p'), { className:'muted small', textContent:'Chưa có ảnh.' })); return; }
+  if(XEM_THU){ img.src = 'anh/' + f; return; }
+  try{
+    const r = await fetch('/api/anh?f=' + encodeURIComponent(f), { headers: { 'x-csq-tk': LS.get('csq_tk') || '' } });
+    if(!r.ok) throw 0;
+    img.src = URL.createObjectURL(await r.blob());
+  }catch(_){ img.alt = 'Không tải được ảnh'; }
+}
+let bhToa = '', bhLoai = '', bhQ = '';
+function renderBH(){
+  if(!UNITS.length){
+    $('#bhWrap').innerHTML = `<div class="alert bad"><b>Bảng hàng đang được cập nhật.</b> Giá và quỹ căn sẽ hiện tại đây khi có bảng hàng chính thức.</div>`;
+    return;
+  }
+  const toas = [...new Set(UNITS.map(u => u.toa))].sort(), loais = [...new Set(UNITS.map(u => u.loai).filter(Boolean))].sort();
+  const ds = UNITS.filter(u => (!bhToa || u.toa === bhToa) && (!bhLoai || u.loai === bhLoai) && (!bhQ || bo_dau(u.ma).includes(bo_dau(bhQ))))
+    .sort((a,b) => a.toa.localeCompare(b.toa) || a.tang - b.tang || String(a.ma).localeCompare(String(b.ma)));
+  const khach = laKhach();
+  $('#bhWrap').innerHTML = `
+    <p class="small muted">${khach ? 'Bảng hàng' : 'Giỏ hàng đại lý FBG'} cập nhật <b>${ngayVN(META.gio_hang_cap_nhat)}</b> · ${UNITS.length} căn đang chào. Giá đã gồm VAT và kinh phí bảo trì, có thể thay đổi — giá chốt theo phiếu tính giá chính thức khi đặt chỗ.</p>
+    <div class="alert warn chi-sale small">Các căn này thuộc <b>Capital State (tòa C1, C6)</b>, ký HĐMB thẳng với chủ đầu tư — <b>không phải</b> chính sách S4. Chính sách C1 đợt 20/07 hết hạn 30/09/2026: <b>kiểm lại giá với quản lý trước khi báo khách</b>. Giá TT nhanh 95% đang ⚠️ tạm dừng tư vấn.</div>
+    <div class="chips">${[['','Tất cả'], ...toas.map(t => [t, t + (t === 'C1' ? ' · Times' : t === 'C6' ? ' · Kings' : '')])].map(([v,l]) => `<button class="chip" data-bhtoa="${esc(v)}" aria-pressed="${v===bhToa}">${esc(l)}</button>`).join('')}</div>
+    <div class="row-toolbar"><input type="search" id="bhQ" placeholder="Tìm mã căn, vd C1-1703" value="${esc(bhQ)}"><select id="bhLoai" aria-label="Loại căn"><option value="">Mọi loại căn</option>${loais.map(l => `<option ${l===bhLoai?'selected':''}>${esc(l)}</option>`).join('')}</select></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Mã căn</th><th>Tầng</th><th>Loại</th><th class="num">Thông thủy</th><th class="num">Giá niêm yết</th><th class="num">TT tiến độ</th><th class="num">Vay NH</th>${khach ? '' : '<th class="num">TT nhanh 95% ⚠️</th><th>Tình trạng</th>'}</tr></thead><tbody>
+    ${ds.map(u => `<tr data-can="${esc(u.ma)}" style="cursor:pointer"><td class="ma" data-nhan="Mã căn"><b style="color:var(--navy2);text-decoration:underline">${esc(u.ma)}</b>${!khach && u.canh_bao && u.canh_bao.length ? ' <span class="badge b-warn" title="Có cảnh báo dữ liệu">!</span>' : ''}</td><td data-nhan="Tầng">${u.tang}</td><td data-nhan="Loại">${esc(u.loai || '—')}</td><td class="num" data-nhan="Thông thủy">${m2(u.dt)}</td><td class="num gia" data-nhan="Giá niêm yết">${u.gia_tong != null ? tyGon(u.gia_tong) : '<span class="badge b-warn">hỏi QL</span>'}</td><td class="num" data-nhan="TT tiến độ">${tyGon(u.gia_tien_do)}</td><td class="num" data-nhan="Vay NH">${tyGon(u.gia_vay)}</td>${khach ? '' : `<td class="num" data-nhan="TT nhanh 95% ⚠️">${tyGon(u.gia_tts)}</td><td class="small" data-nhan="Tình trạng">${esc(u.tinh_trang || '')}</td>`}</tr>`).join('') || `<tr><td colspan="9" class="muted">Không có căn khớp bộ lọc.</td></tr>`}
+    </tbody></table></div>
+    <p class="small muted">Bấm mã căn để xem chỉ căn${khach ? '' : ', phiếu tính giá'} và thông tin chi tiết.</p>`;
+  $('#bhWrap').querySelectorAll('[data-bhtoa]').forEach(b => b.onclick = () => { bhToa = b.dataset.bhtoa; renderBH(); });
+  $('#bhQ').oninput = e => { bhQ = e.target.value; const pos = e.target.selectionStart; renderBH(); const q = $('#bhQ'); q.focus(); q.setSelectionRange(pos, pos); };
+  $('#bhLoai').onchange = e => { bhLoai = e.target.value; renderBH(); };
+}
+function moCan(ma){
+  const u = UNITS.find(x => x.ma === ma); if(!u) return;
+  track('can', ma);
+  const khach = laKhach(), ten = u.toa === 'C1' ? 'Times Place' : u.toa === 'C6' ? 'Kings Place' : '';
+  const hangGia = [['Giá niêm yết (gồm VAT, KPBT)', u.gia_tong], ['Thanh toán theo tiến độ', u.gia_tien_do], ['Vay ngân hàng (hỗ trợ lãi suất)', u.gia_vay]].concat(khach ? [] : [['Thanh toán nhanh 95% ⚠️ tạm dừng tư vấn', u.gia_tts]]);
+  const pas = khach ? [] : Object.keys(u.ptg || {}).sort((a,b) => ['tien-do','vay','tts'].indexOf(a) - ['tien-do','vay','tts'].indexOf(b));
+  $('#canNoiDung').innerHTML = `
+    <h2 style="margin:0 0 2px">Căn ${esc(u.ma)}</h2>
+    <p class="small muted" style="margin:0 0 10px">Tòa ${esc(u.toa)} ${ten} · Tầng ${u.tang} · ${esc(u.loai || '')} · Thông thủy ${m2(u.dt)}${u.tinh_trang ? ' · ' + esc(u.tinh_trang) : ''}</p>
+    ${!khach && u.canh_bao && u.canh_bao.length ? `<div class="alert warn small"><ul class="tight">${u.canh_bao.map(c => `<li>${esc(c)}</li>`).join('')}</ul></div>` : ''}
+    <div class="tbl-wrap" style="margin-bottom:12px"><table><tbody>${hangGia.map(([k,v]) => `<tr><th>${esc(k)}</th><td class="num"><b>${v != null ? tien(v) + ' đ' : (k.startsWith('Giá niêm yết') && u.gia_tong_goc ? `<span class="badge b-warn">ô gốc "${esc(u.gia_tong_goc)}" — hỏi quản lý</span>` : '—')}</b></td></tr>`).join('')}</tbody></table></div>
+    <p class="small muted" style="margin-top:-6px">${khach ? 'Giá tham khảo theo bảng hàng ngày ' + ngayVN(META.gio_hang_cap_nhat) + ', có thể thay đổi. Lịch thanh toán chi tiết theo phiếu tính giá chính thức khi đặt chỗ. Không phải cam kết giá hay lợi nhuận.' : 'Nguồn: ' + esc(u.nguon || '') + (u.gia_tu_phieu ? ' · giá ' + u.gia_tu_phieu.join(', ') + ' lấy từ phiếu tính giá CĐT (ô giỏ hàng trống)' : '')}</p>
+    ${khach ? `<button class="btn" type="button" data-dat-can="${esc(u.ma)}" style="width:100%;margin-bottom:12px">📅 Đặt lịch xem căn này</button>` : `<div class="row-toolbar"><button class="btn" type="button" data-chep-can="${esc(u.ma)}">Chép tin gửi khách</button>${u.the_fbg ? `<button class="btn ghost" type="button" data-the="${esc(u.the_fbg)}">Thẻ căn FBG (có giá)</button>` : ''}</div>`}
+    <h3>Chỉ căn${u.chi_can_nguon && !khach ? ` <span class="badge b-mute">${esc(u.chi_can_nguon)}</span>` : ''}</h3>
+    <img id="canChiCan" alt="Chỉ căn ${esc(u.ma)}" style="width:100%;border-radius:8px;border:1px solid var(--line);background:#f3f1ec;min-height:120px">
+    ${pas.length ? `<h3 style="margin-top:14px">Phiếu tính giá (mẫu CĐT — văn bản nội bộ, không gửi nguyên bản cho khách)</h3>
+      <div class="chips">${pas.map((pa,i) => `<button class="chip" data-pa="${pa}" aria-pressed="${i===0}">${esc(TEN_PA[pa])}${pa==='tts'?' ⚠️':''}</button>`).join('')}</div>
+      <p class="small muted" style="margin:-4px 0 8px">⚠️ Ngày dự kiến in trên phiếu tính theo mốc cũ của đại lý — lịch thật tính lại theo ngày ký TTĐC.</p>
+      <img id="canPtg" alt="Phiếu tính giá" style="width:100%;border-radius:8px;border:1px solid var(--line);background:#f3f1ec;min-height:120px">
+      <p><a href="#" id="canTaiPtg" class="small">⬇ Tải phiếu đang xem</a></p>` : (!khach ? '<p class="small muted">Chưa có phiếu tính giá cho căn này — xin quản lý/đại lý.</p>' : '')}`;
+  $('#canModal').hidden = false;
+  taiAnh($('#canChiCan'), u.chi_can);
+  const hienPa = pa => { $('#canNoiDung').querySelectorAll('[data-pa]').forEach(b => b.setAttribute('aria-pressed', b.dataset.pa === pa)); const im = $('#canPtg'); im.removeAttribute('src'); taiAnh(im, u.ptg[pa]); $('#canTaiPtg').dataset.ten = `phieu-tinh-gia-${u.ma}-${pa}.jpg`; track('tab', 'ptg-' + pa); };
+  if(pas.length){ hienPa(pas[0]); $('#canNoiDung').querySelectorAll('[data-pa]').forEach(b => b.onclick = () => hienPa(b.dataset.pa));
+    $('#canTaiPtg').onclick = e => { e.preventDefault(); const a = document.createElement('a'); a.href = $('#canPtg').src; a.download = e.target.dataset.ten; a.click(); }; }
+}
+function tinGuiKhach(u){
+  return `Dạ em gửi anh/chị thông tin căn ${u.ma} – tòa ${u.toa === 'C1' ? 'Times Place (C1)' : u.toa === 'C6' ? 'Kings Place (C6)' : u.toa}, dự án Capital Square Đà Nẵng:\n• Tầng ${u.tang}, ${u.loai || ''}, thông thủy ${String(u.dt).replace('.', ',')} m²\n• Giá niêm yết (gồm VAT, KPBT): ${u.gia_tong != null ? tien(u.gia_tong) + ' đ' : 'em xin gửi sau'}\n• Thanh toán theo tiến độ: ${u.gia_tien_do != null ? tien(u.gia_tien_do) + ' đ' : '—'}\n• Vay ngân hàng có hỗ trợ lãi suất: ${u.gia_vay != null ? tien(u.gia_vay) + ' đ' : '—'}\nGiá theo bảng hàng ngày ${ngayVN(META.gio_hang_cap_nhat)}, có thể thay đổi; lịch thanh toán chi tiết theo phiếu tính giá chính thức khi đặt chỗ. Anh/chị tiện xem nhà mẫu hôm nào để em sắp xếp ạ?`;
+}
+$('#bhWrap').addEventListener('click', e => { const tr = e.target.closest('[data-can]'); if(tr) moCan(tr.dataset.can); });
+$('#canDong').onclick = () => { $('#canModal').hidden = true; };
+$('#canModal').addEventListener('click', async e => {
+  if(e.target.id === 'canModal'){ $('#canModal').hidden = true; return; }
+  const dc = e.target.closest('[data-dat-can]'); if(dc){ $('#canModal').hidden = true; moDatLich(); $('#dlGhiChu').value = 'Quan tâm căn ' + dc.dataset.datCan; return; }
+  const cc = e.target.closest('[data-chep-can]');
+  if(cc){ const t = tinGuiKhach(UNITS.find(x => x.ma === cc.dataset.chepCan)); try{ await navigator.clipboard.writeText(t); }catch(_){} cc.textContent = 'Đã chép — dán vào Zalo khách'; track('ts', 'can-' + cc.dataset.chepCan); setTimeout(() => cc.textContent = 'Chép tin gửi khách', 1800); return; }
+  const th = e.target.closest('[data-the]'); if(th){ const im = document.createElement('img'); im.style.cssText = 'width:100%;border-radius:8px;margin-top:10px'; th.after(im); th.remove(); taiAnh(im, th.dataset.the); }
+});
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && !$('#canModal').hidden) $('#canModal').hidden = true; });
+renderBH();
+
+/* ===== CHÍNH SÁCH ===== */
+let csToa = '';
+function renderCS(){
+  const toas = [...new Set(CS.flatMap(c => arr(c.toa)))];
+  $('#csChips').innerHTML = [['','Tất cả'], ...toas.map(t => [t,t])].map(([v,l]) => `<button class="chip" data-v="${esc(v)}" aria-pressed="${v===csToa}">${esc(l)}</button>`).join('');
+  $('#csChips').querySelectorAll('.chip').forEach(b => b.onclick = () => { csToa = b.dataset.v; track('cs', csToa || 'tat-ca'); renderCS(); });
+  const order = {'ban-hanh':0,'du-thao':1,'het-hieu-luc':2};
+  const list = CS.filter(c => !csToa || arr(c.toa).includes(csToa)).sort((a,b) => (order[a.trang_thai]??3) - (order[b.trang_thai]??3));
+  $('#csList').innerHTML = list.map(c => {
+    const tt = TT[c.trang_thai] || [c.trang_thai, 'b-mute'];
+    const pa = arr(c.phuong_an).map(p => `<details class="kb"><summary>${esc(p.ten)}${p.chiet_khau_pct != null ? ` <span class="badge">CK ${esc(p.chiet_khau_pct)}%</span>` : ''}</summary><div class="body">
+      ${p.co_so_ck ? `<p class="small muted">Chiết khấu tính trên: ${esc(p.co_so_ck)}</p>` : ''}
+      ${p.mo_ta ? `<p class="small">${esc(p.mo_ta)}</p>` : ''}
+      ${arr(p.tien_do).length ? `<div class="tbl-wrap"><table><thead><tr><th>Đợt</th><th>Số tiền</th><th>Thời hạn</th></tr></thead><tbody>${arr(p.tien_do).map(d => `<tr><td>${esc(d.dot)}</td><td>${esc(d.so_tien)}</td><td class="small">${esc(d.thoi_han)}</td></tr>`).join('')}</tbody></table></div>` : ''}
+      ${arr(p.ghi_chu).length ? `<ul class="tight small">${arr(p.ghi_chu).map(g => `<li>${esc(g)}</li>`).join('')}</ul>` : ''}
+    </div></details>`).join('');
+    const qua = arr(c.qua_tang).map(q => `<li><b>${esc(q.ten)}</b>${q.gia_tri_theo_loai ? ': ' + Object.entries(q.gia_tri_theo_loai).map(([k,v]) => `${esc(k)} ${typeof v === 'number' ? vnd(v) : esc(v)}`).join(' · ') : ''}${q.cach_tru ? ` <span class="muted small">(${esc(q.cach_tru)})</span>` : ''}</li>`).join('');
+    const them = arr(c.uu_dai_them).filter(u => !(u.han_booking && HOM_NAY > u.han_booking)).map(u => `<div class="alert info"><b>${esc(u.ten)}</b>${u.dieu_kien ? ` — ${esc(u.dieu_kien)}` : ''}<ul class="tight">${arr(u.noi_dung).map(n => `<li>${esc(n)}</li>`).join('')}</ul>${nguonHTML(u.nguon)}</div>`).join('');
+    return `<div class="card"><h3>${esc(c.ten)} <span class="badge ${tt[1]}">${esc(tt[0])}</span></h3>
+      <p class="small muted">Tòa ${arr(c.toa).map(esc).join(', ')} · Hiệu lực ${ngayVN(c.hieu_luc_tu)} → ${ngayVN(c.hieu_luc_den)}${c.ben_ban ? ' · Bên Bán: ' + esc(c.ben_ban) : ''}${c.coc ? ' · Cọc ' + vnd(c.coc) : ''}</p>
+      ${qua ? `<ul class="tight small">${qua}</ul>` : ''}${them}${pa}
+      ${arr(c.luu_y).length ? `<ul class="tight small">${arr(c.luu_y).map(g => `<li>⚠️ ${esc(g)}</li>`).join('')}</ul>` : ''}
+      ${nguonHTML(c.nguon)}</div>`;
+  }).join('') || '<p class="muted">Chưa có chính sách cho tòa này.</p>';
+}
+renderCS();
+
+/* ===== LỊCH THANH TOÁN S4 =====
+   Tỷ lệ chép từ CSBH tòa S4 dự thảo 16/09/2026 (raw/du-an-capital-square/csbh-toa-s4-du-thao-16-09-2026.pdf, tr.1–4).
+   "G" = Tổng giá bán căn hộ gồm VAT. Phần theo "Giá bán HĐMB" (giá gốc với CĐT) không tính được vì hub không có số này. */
+const COC_S4 = 100e6;
+const LICH_S4 = {
+  thuong: {ten:'Thanh toán thường — CK 8% (đã phản ánh trong giá Stacking)', dot:[
+    ['Ký TTĐCCN', COC_S4, 'Trong 02 ngày từ khi nộp đủ cọc', 0],
+    ['Lần 1 — ký HĐ CN HĐMB', G => .15*G - COC_S4, 'Trong 20 ngày từ ngày ký TTĐCCN (15% G, đã gồm tiền cọc)', 20],
+    ['Lần 2', G => .10*G, '75 ngày sau hạn lần 1', 75],
+    ['Lần 3', G => .10*G, '75 ngày sau hạn lần 2', 75],
+    ['Lần 4', G => .05*G, '70 ngày sau hạn lần 3', 70],
+    ['Lần 5', G => .05*G, '70 ngày sau hạn lần 4', 70],
+    ['Lần 6', G => .05*G, '70 ngày sau hạn lần 5', 70],
+    ['Lần 7', null, 'Phần còn lại của Giá chuyển nhượng hợp đồng — 70 ngày sau hạn lần 6', 70],
+    ['Lần 8 — với CĐT', null, '45% Giá bán HĐMB (gồm VAT) + 100% KPBT + VAT của 5% — khi CĐT thông báo bàn giao', null],
+    ['Lần 9 — với CĐT', null, '5% Giá bán HĐMB (chưa VAT) — khi được cấp Giấy chứng nhận', null],
+  ]},
+  vay: {ten:'Vay ngân hàng tới 70% G (HTLS theo PA1 hoặc PA2)', dot:[
+    ['Ký TTĐCCN', COC_S4, 'Trong 02 ngày từ khi nộp đủ cọc', 0],
+    ['Lần 1 — ký HĐ CN HĐMB', G => .15*G - COC_S4, 'Trong 20 ngày từ ngày ký TTĐCCN (15% G, đã gồm tiền cọc)', 20],
+    ['Lần 2 — khách', null, 'Phần còn lại của Giá chuyển nhượng hợp đồng, không gồm phần ngân hàng giải ngân — 20 ngày sau ký HĐ CN', 20],
+    ['Lần 2 — ngân hàng giải ngân', G => .50*G, '50% G — cùng đợt lần 2', null],
+    ['Lần 3 — ngân hàng giải ngân', G => .20*G, '20% G — theo thông báo bàn giao của CĐT', null],
+    ['Lần 3 — khách', null, 'Phần còn lại của 45% Giá bán HĐMB + 100% KPBT + VAT của 5% (sau khi trừ 20% G) — theo thông báo bàn giao', null],
+    ['Lần 4 — khách', null, '5% Giá bán HĐMB (chưa VAT) — khi được cấp Giấy chứng nhận', null],
+  ]},
+  som100: {ten:'Thanh toán sớm 100% Giá chuyển nhượng hợp đồng — CK 12%', dot:[
+    ['Ký TTĐCCN', COC_S4, 'Trong 02 ngày từ khi nộp đủ cọc', 0],
+    ['Lần 1', null, '100% Giá chuyển nhượng hợp đồng (gồm VAT, đã gồm cọc) — trong 15 ngày từ ngày ký TTĐCCN', 15],
+    ['Lần 2 — với CĐT', null, '45% Giá bán HĐMB (gồm VAT) + 100% KPBT + VAT của 5% — theo thông báo bàn giao', null],
+    ['Lần 3 — với CĐT', null, '5% Giá bán HĐMB (chưa VAT) — khi được cấp Giấy chứng nhận', null],
+  ]},
+  som95: {ten:'Thanh toán sớm 95% Tổng giá bán — CK 18%', dot:[
+    ['Ký TTĐCCN', COC_S4, 'Trong 02 ngày từ khi nộp đủ cọc', 0],
+    ['Lần 1', null, '100% Giá chuyển nhượng hợp đồng + 45% Giá bán HĐMB (gồm VAT) — trong 15 ngày từ ngày ký TTĐCCN', 15],
+    ['Lần 2', null, '100% KPBT + VAT của 5% Giá bán HĐMB — theo thông báo bàn giao', null],
+    ['Lần 3', null, '5% Giá bán HĐMB (chưa VAT) — khi được cấp Giấy chứng nhận', null],
+  ]},
+};
+function tinhLich(){
+  const G = Number(String($('#ltGia').value).replace(/[^\d]/g,''));
+  const pa = LICH_S4[$('#ltPa').value];
+  track('lich', $('#ltPa').value);
+  if(!G || G < 5e8){ $('#ltKq').innerHTML = '<div class="alert warn">Nhập tổng giá bán gồm VAT (số đồng, vd 5200000000).</div>'; return; }
+  let d = $('#ltNgay').value ? new Date($('#ltNgay').value + 'T00:00:00') : null, cong = 0;
+  const rows = pa.dot.map(([ten, f, mo, ngay]) => {
+    let han = '—';
+    if(d && ngay != null){ const x = new Date(d); x.setDate(x.getDate() + ngay); d = x; han = x.toLocaleDateString('vi-VN'); }
+    else if(ngay == null) han = 'theo thông báo';
+    const tien = typeof f === 'function' ? f(G) : (typeof f === 'number' ? f : null);
+    if(tien != null && !/ngân hàng/.test(ten)) cong += tien;
+    return `<tr><td>${esc(ten)}</td><td class="num">${tien != null ? vnd(tien) : '<span class="muted">xem mô tả</span>'}</td><td class="small">${esc(mo)}</td><td class="small">${han}</td></tr>`;
+  }).join('');
+  $('#ltKq').innerHTML = `<div class="card"><h3>${esc(pa.ten)}</h3>
+    <p class="small">Tổng giá bán gồm VAT: <b>${vnd(G)}</b> (${ty(G)})</p>
+    <div class="tbl-wrap"><table><thead><tr><th>Đợt</th><th class="num">Số tiền</th><th>Nội dung</th><th>Hạn dự kiến</th></tr></thead><tbody>${rows}
+    <tr class="total"><td>Khách tự trả ở các đợt tính được</td><td class="num">${vnd(cong)}</td><td colspan="2" class="small">Chưa gồm các đợt "xem mô tả"</td></tr></tbody></table></div>
+    <ul class="tight small muted">
+      <li>Hạn "dự kiến" cộng dồn số ngày trong CSBH, chưa tính trường hợp rơi vào thứ Bảy, Chủ nhật hay ngày lễ (khi đó dời sang ngày làm việc kế tiếp).</li>
+      <li>Các đợt theo "Giá bán HĐMB" phụ thuộc hợp đồng gốc giữa Bên Bán và CĐT, hub không có số này. Hỏi quản lý khi khách cần con số.</li>
+      <li>Ưu đãi Early Birds (CK 5%) <b>chưa</b> trừ ở đây: nguồn chưa nói rõ tính trên cơ sở nào.</li>
+      <li>Lãi suất, điều kiện vay do ngân hàng Bên Bán chỉ định quyết định. Không cam kết khách được duyệt vay.</li>
+    </ul>
+    <div class="src">Nguồn: CSBH tòa S4 dự thảo 16/09/2026, tr.1–4</div></div>`;
+}
+$('#ltTinh').onclick = tinhLich;
+$('#ltGia').addEventListener('input', e => { const v = e.target.value.replace(/[^\d]/g,''); e.target.value = v ? Number(v).toLocaleString('vi-VN') : ''; });
+
+/* ===== PHÁP LÝ ===== */
+(function(){
+  // Danh sách văn bản lấy đủ từ META.cong_van (bảng tổng 7 văn bản), không chỉ văn bản đã nối được mã sale
+  const saleCua = {};
+  TOA.forEach(t => arr(t.cong_van_du_dk_ban).forEach(c => { (saleCua[c.so] = saleCua[c.so] || []).push(t.ma); }));
+  const ds = arr(META.cong_van).slice().sort((a,b) => String(a.ngay).localeCompare(String(b.ngay)));
+  const kbPL = KB.filter(k => k.nhom === 'phap-ly');
+  $('#plWrap').innerHTML = `<div class="card"><h3>Văn bản Sở Xây dựng Đà Nẵng về dự án</h3>
+    ${ds.length ? `<div class="tbl-wrap"><table><thead><tr><th>Số văn bản</th><th>Ngày</th><th>Dự án · tòa pháp lý</th><th class="chi-sale">Mã sale (nối được)</th><th class="num">Số căn</th><th>Thế chấp</th><th>Nội dung</th></tr></thead><tbody>${ds.map(c => `<tr><td><b>${esc(c.so)}</b></td><td>${ngayVN(c.ngay)}</td><td class="small">${esc(c.du_an)} · ${esc(c.toa_phap_ly)}</td><td class="chi-sale">${(saleCua[c.so] || []).map(esc).join(', ') || '<span class="muted">—</span>'}</td><td class="num">${esc(c.so_can ?? '')}</td><td class="small">${c.the_chap ? `<span class="badge ${/chưa/i.test(c.the_chap) ? 'b-ok' : 'b-warn'}">${esc(c.the_chap)}</span>` : '—'}</td><td class="small">${esc(c.noi_dung)}</td></tr>`).join('')}</tbody></table></div>` : '<p class="muted">Đang chờ dữ liệu.</p>'}
+    <p class="small muted chi-sale">Văn bản gọi tòa theo mã pháp lý (2.x, MAT, LAT). Mã sale (C/S) chỉ ghi khi đã nối được. Phần lớn chỗ nối là suy luận, xem ghi chú ở tab Tòa. Khối LAT 4-5 (374 căn) chưa thấy văn bản đủ điều kiện bán.</p>
+    <span class="chi-sale">${nguonHTML('phap-ly-cong-van-so-xay-dung.md mục 8')}</span></div>
+    ${kbPL.map(k => kbCard(k, true)).join('')}`;
+})();
+
+/* ===== HỎI ĐÁP ===== */
+function kbCard(k, open){
+  const m = MUC[k.muc_do];
+  return `<details class="kb"${open ? '' : ''}><summary>${esc(k.tieu_de || k.id)}${m ? ` <span class="badge ${m[1]}">${m[0]}</span>` : ''}${k.noi_bo ? ' <span class="badge b-mute">nội bộ</span>' : ''}</summary><div class="body">${k.a}${nguonHTML(k.nguon)}</div></details>`;
+}
+(function(){
+  const nhoms = [...new Set(KB.map(k => k.nhom).filter(Boolean))];
+  const TEN_NHOM = {'phap-ly':'Pháp lý','san-pham':'Sản phẩm','chinh-sach':'Chính sách','thu-tuc':'Thủ tục','ban-giao':'Bàn giao','vi-tri-tien-ich':'Vị trí & tiện ích','tien-do':'Tiến độ','chu-dau-tu':'Chủ đầu tư','xu-ly-tu-choi':'Xử lý từ chối'};
+  $('#kbNhom').innerHTML += nhoms.map(n => `<option value="${esc(n)}">${esc(TEN_NHOM[n] || n)}</option>`).join('');
+  const draw = () => {
+    const q = $('#kbSearch').value.trim(), n = $('#kbNhom').value;
+    let list = KB.filter(k => !n || k.nhom === n);
+    if(q) list = timKB(q, 12).map(r => r.k).filter(k => !n || k.nhom === n);
+    $('#kbList').innerHTML = list.map(k => kbCard(k)).join('') || '<p class="muted">Chưa có câu trả lời khớp. Hỏi quản lý và báo để bổ sung vào hub.</p>';
+  };
+  $('#kbSearch').oninput = draw; $('#kbNhom').onchange = draw; draw();
+})();
+
+/* ===== TÀI LIỆU GỐC ===== */
+$('#tlList').innerHTML = arr(META.thu_muc_drive).map(t => `<div class="card"><h3>${esc(t.ten)}</h3><a href="https://drive.google.com/drive/folders/${esc(t.id)}" target="_blank" rel="noopener">Mở thư mục Drive ↗</a>${t.ghi_chu ? `<p class="small muted">${esc(t.ghi_chu)}</p>` : ''}</div>`).join('');
+$('#legal').innerHTML = esc(META.phap_ly_ngan || '');
+
+/* ===== TRỢ LÝ (khớp từ khóa, không gọi AI) ===== */
+// Chặn câu hỏi lợi nhuận/cam kết. Đo 26/09: bản cũ bắt nhầm "rồi", "hoàn lại không", "đóng tiền", "cam kết bàn giao", "lãi mấy %" → NGOẠI LỆ chạy trước
+const NGOAI_LE_YMYL = /(hoan lai|lai suat|vay lai|lai vay|vay .*lai|dong tien (dot|the nao|khi nao|may)|cam ket (ban giao|tien do)|tien coc)/;
+const CHAN_YMYL = /(co loi|loi khong|co lai khong|loi bao nhieu|sinh lai|loi nhuan|sinh loi|lai bao nhieu|tang gia|len gia|cho thue duoc bao nhieu|gia thue|cho thue bao nhieu|dong tien cho thue|cam ket (loi|lai|gia|thue)|chac chan lai|dau tu co lai|ty suat|hoan von)/;
+const chanYMYL = s => !NGOAI_LE_YMYL.test(s) && CHAN_YMYL.test(s);
+// Viết tắt sale hay gõ → chữ đầy đủ (đã bỏ dấu)
+const VIET_TAT = [[/\bko\b|\bk\b|\bkhg\b/g,'khong'],[/\bdc\b|\bđc\b/g,'duoc'],[/\bdk\b/g,'dieu kien'],[/\bhd\b/g,'hop dong'],[/\bck\b/g,'chiet khau ck'],[/\bng\b/g,'nguoi'],[/\bnc\b/g,'nuoc'],[/\bbn\b/g,'bao nhieu'],[/\bcdt\b/g,'chu dau tu cdt'],[/\bnn\b/g,'nuoc ngoai'],[/\bpn\b/g,'phong ngu pn']];
+const chuanHoa = q => VIET_TAT.reduce((s,[re,to]) => s.replace(re,to), bo_dau(q));
+const TU_CHUNG = new Set(['bao','nhieu','khong','co','la','gi','the','nao','duoc','cua','cho','va','em','anh','chi','nay','do','thi','minh','ai','o','dau']);
+function timKB(q, n = 3){
+  const s = chuanHoa(q).replace(/[^a-z0-9\s.-]/g,' ').replace(/\s+/g,' ').trim();
+  const tu = s.split(' ').filter(w => w.length > 1 && !TU_CHUNG.has(w));
+  const maToa = (s.match(/\b([cs])\s?(\d{1,2})\b/) || []).slice(1).join('');   // câu có mã tòa → ưu tiên mục mang mã đó
+  return KB.map(k => {
+    let d = 0;
+    for(const key of arr(k.keys)){
+      const kk = bo_dau(key);
+      if(s.includes(kk)) d += 20 + kk.length / 3;
+      else {
+        // khớp một phần: chỉ tính từ mang nghĩa, bỏ từ chung ("bao nhieu", "khong"…) để "coc bao nhieu" không trôi về mục giá
+        const w = kk.split(' ').filter(x => !TU_CHUNG.has(x));
+        const hit = w.filter(x => tu.includes(x)).length;
+        if(w.length && hit >= Math.max(1, Math.ceil(w.length * .6))) d += 3 * hit;
+      }
+    }
+    if(bo_dau(k.tieu_de || '').split(' ').some(w => w.length > 3 && tu.includes(w))) d += 2;
+    if(d > 0 && maToa && (k.id.includes(maToa) || arr(k.keys).some(x => new RegExp('\\b' + maToa + '\\b').test(bo_dau(x))))) d += 10;
+    return {k, d};
+  }).filter(r => r.d > 0).sort((a,b) => b.d - a.d).slice(0, n);
+}
+function traToa(s){
+  const m = s.match(/\b([cs]\s?\d{1,2})\b/i) || null;
+  const byTen = TOA.find(t => t.ten && s.includes(bo_dau(t.ten).replace(' place','')));
+  const t = m ? TOA.find(x => bo_dau(x.ma) === m[1].replace(/\s/g,'')) : byTen;
+  if(!t) return null;
+  const cs = CS.filter(c => arr(c.toa).includes(t.ma) && c.trang_thai !== 'het-hieu-luc');
+  return `<b>${esc(t.ma)} — ${esc(t.ten||'')}</b> (${esc(t.phan_khu||'')})<br>` +
+    (t.cdt ? `CĐT: ${esc(t.cdt)}<br>` : '') + (t.ben_ban ? `Bên Bán: ${esc(t.ben_ban)}<br>` : '') +
+    (t.hinh_thuc === 'chuyen-nhuong-hdmb' ? '⚠️ Mua theo hình thức <b>chuyển nhượng HĐMB</b>.<br>' : '') +
+    (cs.length ? `CSBH: ${cs.map(c => esc(c.ten)).join('; ')}<br>` : 'Chưa có CSBH đang hiệu lực trên hub.<br>') +
+    `<a href="#toa" data-toa="${esc(t.ma)}">Xem hồ sơ tòa &amp; mặt bằng →</a>`;
+}
+function traLoi(q){
+  const s = bo_dau(q);
+  if(chanYMYL(chuanHoa(q))) return {a:'Câu này em không trả lời bằng con số được ạ. Hub không có, và mình cũng <b>không được hứa</b> lợi nhuận, giá thuê hay mức tăng giá với khách. Mẫu trả lời: <i>“Dạ phần lợi nhuận hay giá thuê em không dám cam kết, vì còn phụ thuộc thị trường. Em gửi anh chị thông tin pháp lý, chính sách và tiến độ thanh toán để anh chị tự cân nhắc ạ.”</i>'};
+  const mCan = s.toUpperCase().replace(/\s+/g,'').match(/([CS]\d)-?(\d{3,4}A?)/);
+  const can = mCan && UNITS.find(u => u.ma === mCan[1] + '-' + mCan[2]);
+  if(can) return {a:`<b>Căn ${esc(can.ma)}</b> · tầng ${can.tang} · ${esc(can.loai||'')} · ${m2(can.dt)}<br>Giá niêm yết: ${can.gia_tong != null ? tien(can.gia_tong) + ' đ' : 'hỏi quản lý'}<br>TT tiến độ: ${can.gia_tien_do != null ? tien(can.gia_tien_do) + ' đ' : '—'} · Vay: ${can.gia_vay != null ? tien(can.gia_vay) + ' đ' : '—'}<br><a href="#" data-mocan="${esc(can.ma)}">Mở hồ sơ căn (chỉ căn, phiếu tính giá) →</a>`};
+  const hits = timKB(q, 3);
+  const toa = traToa(s);
+  if(hits.length && (!toa || hits[0].d >= 10)) return {k:hits[0].k, more:hits.slice(1).map(h => h.k)};
+  if(toa) return {a:toa};
+  if(hits.length) return {k:hits[0].k, more:hits.slice(1).map(h => h.k)};
+  return {a:'Em chưa tìm thấy câu trả lời trong tài liệu. Anh chị thử hỏi cách khác (vd “cọc bao nhiêu”, “người nước ngoài”, “S4 chính sách”), hoặc hỏi quản lý trước khi trả lời khách ạ.'};
+}
+function botMsg(html){ const d = document.createElement('div'); d.className = 'msg bot'; d.innerHTML = html; $('#chatLog').append(d); $('#chatLog').scrollTop = 1e9; }
+function hoi(q){
+  const me = document.createElement('div'); me.className = 'msg me'; me.textContent = q; $('#chatLog').append(me);
+  const r = traLoi(q);
+  track('hoi', q, r.k ? r.k.id : (r.a && /không trả lời bằng con số/.test(r.a) ? 'chan-ymyl' : (r.a && /Xem hồ sơ tòa/.test(r.a) ? 'tra-toa' : null)));
+  if(r.k){
+    const m = MUC[r.k.muc_do];
+    botMsg(`${m && r.k.muc_do !== 'xac-minh' ? `<span class="badge ${m[1]}">${m[0]}</span><br>` : ''}${r.k.a}${nguonHTML(r.k.nguon)}` +
+      (r.more && r.more.length ? `<div class="sugg">${r.more.map(k => `<button data-q="${esc(k.tieu_de || k.id)}">${esc(k.tieu_de || k.id)}</button>`).join('')}</div>` : ''));
+  } else botMsg(r.a);
+}
+$('#chatLog').addEventListener('click', e => {
+  const b = e.target.closest('[data-q]'); if(b){ hoi(b.dataset.q); return; }
+  const a = e.target.closest('[data-toa]'); if(a){ e.preventDefault(); toaChon = a.dataset.toa; renderToa(); openTab('toa'); }
+  const mc = e.target.closest('[data-mocan]'); if(mc){ e.preventDefault(); moCan(mc.dataset.mocan); }
+});
+$('#chatForm').onsubmit = e => { e.preventDefault(); const q = $('#chatIn').value.trim(); if(q){ hoi(q); $('#chatIn').value = ''; } };
+$('#chatBtn').onclick = () => {
+  $('#chat').hidden = false; $('#chatBtn').hidden = true;
+  if(!$('#chatLog').children.length) botMsg('Chào anh chị, em tra được tài liệu Capital Square: tòa, chính sách, pháp lý, thủ tục. Gợi ý:<div class="sugg">' + ['S4 Hudson chính sách','Người nước ngoài mua được không','Cọc bao nhiêu','Early Birds','Bàn giao khi nào'].map(x => `<button data-q="${x}">${x}</button>`).join('') + '</div>');
+  $('#chatIn').focus();
+};
+$('#chatClose').onclick = () => { $('#chat').hidden = true; $('#chatBtn').hidden = false; };
+
+/* ===== TELESALES — dữ liệu TS từ data/kich_ban.json ===== */
+(function(){
+  if(!TS || !TS.kich_ban){ $('#tsWrap').innerHTML = '<p class="muted">Chưa có kịch bản.</p>'; return; }
+  const homNay = new Date(Date.now() + 7*3600e3).toISOString().slice(0,10);
+  const ebCon = TS.early_birds && homNay <= TS.early_birds.han_booking;
+  const ph = t => esc(t).replace(/\[([^\]]+)\]/g, '<mark class="ph">[$1]</mark>');   // ô cần điền nổi bật
+  const loi = (t, id) => `<div class="ts-loi">${ph(t)}<button class="chep" data-chep="${esc(t)}" data-id="${esc(id)}" type="button">Chép</button></div>`;
+  const P = TS.power_statement || {};
+  const muc = [['ts-luat','Luật cứng'],['ts-gioi-thieu','Câu giới thiệu'],...TS.kich_ban.map(k => ['ts-' + k.id, k.ten.split('.')[0] + '. Kịch bản']),['ts-spin','Hỏi nhu cầu'],['ts-tu-choi','Từ chối'],['ts-zalo','Mẫu Zalo'],['ts-bam','Lịch bám khách'],['ts-nguoi-goi','Giữ giọng']];
+  $('#tsWrap').innerHTML = `
+  <div class="alert warn"><b>Mục tiêu duy nhất của cuộc gọi:</b> ${esc(TS.muc_tieu)}</div>
+  <div class="card" id="henCard" style="border-color:var(--gold)"><h3>📅 Tôi vừa chốt được hẹn</h3>
+    <p class="small muted" style="margin-top:-4px">Ghi ngay sau cuộc gọi: quản lý được báo, hẹn được đếm vào báo cáo. Không nhập số điện thoại khách.</p>
+    <form id="henForm" class="form-grid" style="margin:0">
+      <label class="f">Tên gọi khách<input type="text" id="henTen" placeholder="vd: anh Nam" maxlength="40" required></label>
+      <label class="f">Giờ hẹn<input type="text" id="henGio" placeholder="vd: 9h sáng CN 28/9" maxlength="40" required></label>
+      <label class="f">Hình thức<select id="henHt"><option value="nha-mau">Xem nhà mẫu</option><option value="video">Gọi video</option></select></label>
+      <label class="f" style="justify-content:flex-end"><button class="btn" id="henGui">Ghi hẹn</button></label>
+    </form>
+    <div id="henKq"></div>
+  </div>
+  <div class="ts-nav">${muc.map(([id,t]) => `<a class="chip" href="#${id}" data-cuon="${id}">${esc(t)}</a>`).join('')}</div>
+  ${TS.early_birds ? (ebCon ? `<div class="alert info"><b>Early Birds — còn hạn booking tới ${ngayVN(TS.early_birds.han_booking)}</b> (cọc đủ trước hết ${ngayVN(TS.early_birds.han_coc)})${loi(TS.early_birds.loi, 'early-birds')}<div class="ts-note">⚠️ ${esc(TS.early_birds.ghi_chu)}</div></div>` : `<div class="alert info small">Ưu đãi Early Birds đã hết hạn booking (${ngayVN(TS.early_birds.han_booking)}). Không chào ưu đãi này nữa.</div>`) : ''}
+  <div class="card ts-muc" id="ts-luat"><h3>Luật cứng — đọc trước khi gọi</h3><ul class="tight">${TS.luat.map(l => `<li>${esc(l)}</li>`).join('')}</ul></div>
+  <div class="card ts-muc" id="ts-gioi-thieu"><h3>Câu giới thiệu (Power Statement)</h3>
+    ${loi(P.mo, 'ps-mo')}<p class="small" style="margin:8px 0 2px"><b>${esc(P.chuyen)}</b></p><ul class="tight">${arr(P.van_de).map(v => `<li>${esc(v)}</li>`).join('')}</ul>
+    <p class="small" style="margin:8px 0 2px"><b>Sản phẩm:</b> ${esc(P.san_pham)}</p>
+    <p class="small" style="margin:8px 0 2px"><b>Điểm khác biệt (chỉ nói điểm khớp nhu cầu khách):</b></p><ul class="tight">${arr(P.khac_biet).map(v => `<li>${esc(v)}</li>`).join('')}</ul>${nguonHTML(P.nguon)}</div>
+  ${TS.kich_ban.map(k => `<div class="card ts-muc" id="ts-${esc(k.id)}"><h3>${esc(k.ten)}</h3><p class="small muted">${esc(k.tinh_huong)}</p>
+    ${k.buoc.map((b,i) => `<p style="margin:12px 0 2px"><b>${esc(b.nhan)}</b></p>${b.loi.map((t,j) => loi(t, k.id + '-' + i + '-' + j)).join('')}${b.ghi_chu ? `<div class="ts-note">💡 ${esc(b.ghi_chu)}</div>` : ''}`).join('')}</div>`).join('')}
+  <div class="card ts-muc" id="ts-spin"><h3>Hỏi nhu cầu — đúng thứ tự S → P → I → N</h3><p class="small muted">Hỏi, nghe, rồi mới giới thiệu. Chọn 1–2 câu mỗi nhóm, không hỏi dồn.</p>
+    ${TS.spin.map((g,i) => `<p style="margin:12px 0 2px"><b>${esc(g.giai_doan)}</b></p>${g.cau.map((c,j) => loi(c, 'spin-' + i + '-' + j)).join('')}`).join('')}</div>
+  <div class="card ts-muc" id="ts-tu-choi"><h3>Xử lý từ chối</h3><p class="small muted">Đồng cảm → hỏi rõ lý do → gỡ lo bằng giấy tờ → bước tiến nhỏ. Không ép.</p>
+    ${TS.tu_choi.map((t,i) => `<details class="kb"><summary>“${esc(t.cau)}”</summary><div class="body">${loi(t.dap, 'tc-' + i)}<div class="ts-note">➡️ ${esc(t.buoc_tien)}</div>${nguonHTML(t.nguon)}</div></details>`).join('')}</div>
+  <div class="card ts-muc" id="ts-zalo"><h3>Mẫu tin Zalo</h3>
+    ${TS.zalo_mau.map((z,i) => `<p style="margin:12px 0 2px"><b>${esc(z.ten)}</b>${z.hang_loat ? ' <span class="badge b-warn">gửi nhiều khách → quản lý duyệt trước</span>' : ''}</p>${loi(z.noi_dung, 'zalo-' + i)}`).join('')}
+    ${TS.anh_360 ? `<p class="small">Ảnh 360 dự án (gửi khách ở xa): <a href="${esc(TS.anh_360)}" target="_blank" rel="noopener">${esc(TS.anh_360)}</a></p>` : ''}</div>
+  <div class="card ts-muc" id="ts-bam"><h3>Lịch bám khách</h3><p class="small muted">Phần lớn khách chốt hẹn ở lần chạm thứ 5 trở đi. Mỗi lần chạm phải có một lý do mới, không lặp y hệt.</p>
+    <div class="tbl-wrap"><table><thead><tr><th>Chạm</th><th>Khi nào</th><th>Kênh</th><th>Lý do chạm</th></tr></thead><tbody>${TS.follow_up.map(f => `<tr><td class="num">${f.cham}</td><td>${esc(f.ngay)}</td><td>${esc(f.kenh)}</td><td class="small">${esc(f.ly_do)}</td></tr>`).join('')}</tbody></table></div></div>
+  <div class="card ts-muc" id="ts-nguoi-goi"><h3>Giữ giọng khi gọi nhiều</h3><ul class="tight">${TS.nguoi_goi.map(l => `<li>${esc(l)}</li>`).join('')}</ul>${nguonHTML(TS.nguon)}<p class="small muted">Cập nhật ${ngayVN(TS.cap_nhat)}</p></div>`;
+  $('#henForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    const b = { ten: $('#henTen').value.trim(), gio: $('#henGio').value.trim(), ht: $('#henHt').value };
+    if(b.ten.length < 2 || b.gio.length < 2){ $('#henKq').innerHTML = '<p class="small" style="color:var(--bad)">Nhập tên gọi khách và giờ hẹn.</p>'; return; }
+    $('#henGui').disabled = true;
+    const r = XEM_THU ? { ok: true } : await api('/api/hen', b).catch(() => ({}));
+    $('#henGui').disabled = false;
+    if(!r.ok){ $('#henKq').innerHTML = '<p class="small" style="color:var(--bad)">Chưa ghi được hẹn, thử lại sau ít phút.</p>'; return; }
+    try{ (window.dataLayer = window.dataLayer || []).push({ event: 'hub_hen', hub_nhan: b.ht }); }catch(_){}
+    const mau = (TS.zalo_mau[0] || {}).noi_dung || '';
+    const dien = mau.replace(/anh\/chị \[Tên khách\]/, /^(anh|chị|cô|chú|bác|em|ông|bà)\b/i.test(b.ten) ? b.ten : 'anh/chị ' + b.ten).replace('[Tên khách]', b.ten).replace('[giờ], [ngày]', b.gio).replace(b.ht === 'video' ? 'tại nhà mẫu ngã tư Ngô Quyền – Nguyễn Công Trứ, Đà Nẵng [hoặc: gọi video qua Zalo]' : ' [hoặc: gọi video qua Zalo]', b.ht === 'video' ? 'gọi video qua Zalo' : '');
+    $('#henKq').innerHTML = `<div class="alert info" style="margin:10px 0 0">✅ Đã ghi hẹn với <b>${esc(b.ten)}</b> lúc ${esc(b.gio)}. Gửi ngay tin xác nhận cho khách:</div>${loi(dien, 'hen-zalo')}`;
+    $('#henTen').value = ''; $('#henGio').value = '';
+  });
+  $('#tsWrap').addEventListener('click', async e => {
+    const c = e.target.closest('[data-cuon]'); if(c){ e.preventDefault(); document.getElementById(c.dataset.cuon)?.scrollIntoView({ behavior:'smooth' }); return; }
+    const b = e.target.closest('[data-chep]'); if(!b) return;
+    try{ await navigator.clipboard.writeText(b.dataset.chep); }catch(_){ const t = document.createElement('textarea'); t.value = b.dataset.chep; document.body.append(t); t.select(); try{ document.execCommand('copy'); }catch(__){} t.remove(); }
+    b.textContent = 'Đã chép'; setTimeout(() => b.textContent = 'Chép', 1400);
+    track('ts', b.dataset.id);
+  });
+})();
+
+/* ===== THI ĐUA ===== */
+let tdKy = 'tuan';
+async function taiTD(){
+  if(XEM_THU){ $('#tdWrap').innerHTML = '<p class="muted">Bản xem thử không có dữ liệu thi đua.</p>'; return; }
+  $('#tdWrap').innerHTML = '<p class="muted">Đang tải…</p>';
+  const r = await api('/api/thi-dua?ky=' + tdKy).catch(() => ({}));
+  if(!r.ok){ $('#tdWrap').innerHTML = '<div class="alert bad">Không tải được bảng thi đua.</div>'; return; }
+  const c = r.cach_tinh || {}, D = c.diem || {}, T = c.ten || {}, ds = r.ds, toi = ds.find(x => x.toi);
+  const huy = ['🥇','🥈','🥉'], top = ds.filter(x => x.diem > 0).slice(0, 3);
+  const buc = top.length ? `<div class="td-buc">${[top[1], top[0], top[2]].map((x, i) => x ? `<div class="td-o ${i === 1 ? 'h1' : ''}"><div class="hc">${huy[x.hang - 1] || ''}</div><b>${esc(x.ten)}</b><div class="d">${x.diem}</div><div class="small muted">điểm</div></div>` : '<div></div>').join('')}</div>` : '';
+  const cot = Object.keys(D);
+  $('#tdWrap').innerHTML = `
+    <p class="small muted">Từ ${ngayVN(r.tu)} đến ${ngayVN(r.den)} · điểm tự tính từ thao tác trong "Khách của tôi" · cập nhật mỗi lần mở tab.</p>
+    ${toi ? `<div class="alert info"><b>Anh chị đang hạng ${toi.hang}/${ds.length}</b> với ${toi.diem} điểm${toi.chuoi ? ` · chuỗi ${toi.chuoi} ngày chăm khách liên tục 🔥` : ''}.${toi.hang > 1 && ds[0].diem > toi.diem ? ` Cách hạng nhất ${ds[0].diem - toi.diem} điểm — tương đương ${Math.ceil((ds[0].diem - toi.diem) / (D['hen-xem'] || 10))} lịch hẹn xem.` : ''}</div>` : ''}
+    ${buc || '<div class="alert warn">Kỳ này chưa ai có điểm. Mở "Khách của tôi", gọi khách và cập nhật trạng thái là có điểm ngay.</div>'}
+    <div class="tbl-wrap"><table><thead><tr><th>#</th><th>Sale</th><th class="num">Điểm</th>${cot.map(k => `<th class="num" title="${esc(T[k] || k)}">${esc((T[k] || k).replace(/\(.*\)|"/g,'').trim())}</th>`).join('')}<th class="num">Chuỗi ngày</th></tr></thead><tbody>
+      ${ds.map(x => `<tr class="${x.toi ? 'td-toi' : ''}"><td>${x.diem ? (huy[x.hang - 1] || x.hang) : '—'}</td><td>${esc(x.ten)}${x.toi ? ' (tôi)' : ''}</td><td class="num"><b>${x.diem}</b></td>${cot.map(k => `<td class="num">${x.ct[k] || ''}</td>`).join('')}<td class="num">${x.chuoi ? x.chuoi + ' 🔥' : ''}</td></tr>`).join('') || `<tr><td colspan="${cot.length + 4}" class="muted">Chưa có sale nào được duyệt.</td></tr>`}
+    </tbody></table></div>
+    <div class="card" style="margin-top:12px"><h3>Cách tính điểm</h3>
+      <div class="tbl-wrap"><table><tbody>${cot.map(k => `<tr><td>${esc(T[k] || k)}</td><td class="num"><b>+${D[k]}</b></td></tr>`).join('')}</tbody></table></div>
+      <ul class="tight small muted" style="margin-top:8px">
+        <li>Mỗi khách chỉ được tính <b>một lần cho mỗi mốc</b> (quan tâm, hẹn xem, đã xem, lock, cọc) — đổi đi đổi lại trạng thái không cộng thêm.</li>
+        <li>"Chăm" = số khách khác nhau anh chị cập nhật trong ngày, tối đa ${c.tran_cham_ngay || 30} khách/ngày.</li>
+        <li>Chỉ tính thao tác thật trong hub. ${esc(c.giai_thuong || '')}</li>
+      </ul></div>`;
+}
+$('#tdKy').addEventListener('click', e => { const b = e.target.closest('[data-ky]'); if(!b) return; tdKy = b.dataset.ky; $('#tdKy').querySelectorAll('[data-ky]').forEach(x => x.setAttribute('aria-pressed', x === b)); taiTD(); });
+
+/* ===== KHÁCH CỦA TÔI (sale) ===== */
+const TT_MAU = { moi:'b-mute', 'da-goi':'b-mute', 'khong-nghe':'b-mute', 'quan-tam':'b-ok', 'hen-xem':'b-ok', 'da-xem':'b-ok', lock:'b-warn', coc:'b-ok', 'khong-nhu-cau':'b-mute', dnc:'b-bad' };
+let KT = { ds: [], trang_thai: {}, hom_nay: '' }, ktLoc = 'can-goi', ktQ = '';
+const zaloCua = sdt => 'https://zalo.me/84' + String(sdt).replace(/^0/, '');
+const cong = (iso, n) => { const d = new Date(iso + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0,10); };
+async function taiKT(){
+  if(XEM_THU){ $('#ktDs').innerHTML = '<p class="muted">Bản xem thử không có kho khách.</p>'; return; }
+  const r = await api('/api/khach-cua-toi').catch(() => ({}));
+  if(!r.ok){ $('#ktDs').innerHTML = `<div class="alert bad">Không tải được danh sách khách${r.err === 'chua-co-kho' ? ' (kho chưa bật)' : ''}.</div>`; return; }
+  KT = r;
+  if(ktLoc === 'can-goi' && !r.ds.some(k => k.trang_thai !== 'dnc' && k.hen_lai && k.hen_lai <= r.hom_nay)) ktLoc = r.ds.some(k => k.trang_thai === 'moi') ? 'moi' : 'tat';
+  veKT();
+}
+function veKT(){
+  const hn = KT.hom_nay, ds = KT.ds;
+  const canGoi = k => k.trang_thai !== 'dnc' && k.hen_lai && k.hen_lai <= hn;
+  const nhom = { 'can-goi': ['Hôm nay cần gọi', canGoi], moi: ['Mới', k => k.trang_thai === 'moi'], 'hen-xem': ['Hẹn xem', k => k.trang_thai === 'hen-xem'], 'dang-cham': ['Đang chăm', k => ['da-goi','khong-nghe','quan-tam','da-xem','lock'].includes(k.trang_thai)], tat: ['Tất cả', () => true] };
+  $('#ktSo').innerHTML = [[ds.length,'khách của tôi'],[ds.filter(canGoi).length,'cần gọi hôm nay'],[ds.filter(k => k.trang_thai === 'moi').length,'chưa chăm'],[ds.filter(k => k.trang_thai === 'hen-xem').length,'đang hẹn xem']].map(([b,t]) => `<div class="fact"><b>${b}</b><small>${t}</small></div>`).join('');
+  $('#ktLoc').innerHTML = Object.entries(nhom).map(([k,[t,f]]) => `<button class="chip" data-ktloc="${k}" aria-pressed="${k===ktLoc}">${t} (${ds.filter(f).length})</button>`).join('');
+  const q = bo_dau(ktQ);
+  const hien = ds.filter(nhom[ktLoc][1]).filter(k => !q || bo_dau(k.ten || '').includes(q) || String(k.sdt).includes(q.replace(/\D/g,'') || '@'));
+  $('#ktDs').innerHTML = hien.map(k => `<div class="kt ${canGoi(k) ? 'can-goi' : ''} ${k.trang_thai === 'dnc' ? 'dnc' : ''}" data-kt="${k.id}">
+    <div class="kt-dau"><b>${esc(k.ten || '(chưa có tên)')}</b><span class="badge ${TT_MAU[k.trang_thai] || 'b-mute'}">${esc(KT.trang_thai[k.trang_thai] || k.trang_thai)}</span></div>
+    <div class="small muted">${esc(k.sdt)} · ${esc(k.nguon || '')}${k.lan_cham ? ` · đã chăm ${k.lan_cham} lần, lần cuối ${esc(k.cham_cuoi)}` : ''}${k.hen_lai ? ` · <b style="color:${k.hen_lai <= hn ? 'var(--warn)' : 'inherit'}">hẹn gọi lại ${ngayVN(k.hen_lai)}</b>` : ''}</div>
+    ${k.nhu_cau || k.ghi_chu_goc ? `<div class="small" style="margin-top:4px">${k.nhu_cau ? '🎯 ' + esc(k.nhu_cau) : ''}${k.ghi_chu_goc ? ' · 📎 ' + esc(k.ghi_chu_goc) : ''}</div>` : ''}
+    ${k.trang_thai === 'dnc' ? '<div class="small" style="color:var(--bad);margin:6px 0">Khách yêu cầu không liên hệ — không gọi, không nhắn.</div>' : `<div class="kt-nut"><a href="tel:${esc(k.sdt)}" data-ktgoi="${k.id}">📞 Gọi</a><a href="${zaloCua(k.sdt)}" target="_blank" rel="noopener" data-ktgoi="${k.id}">💬 Zalo</a></div>`}
+    <div class="kt-sua">
+      <select data-f="trang_thai" aria-label="Trạng thái">${Object.entries(KT.trang_thai).map(([v,t]) => `<option value="${v}" ${v===k.trang_thai?'selected':''}>${esc(t)}</option>`).join('')}</select>
+      <input type="date" data-f="hen_lai" value="${esc(k.hen_lai || '')}" min="${hn}" aria-label="Hẹn gọi lại">
+      <textarea data-f="ghi_chu" placeholder="Ghi chú cuộc gọi: khách nói gì, băn khoăn gì, bước tiếp theo…" maxlength="500">${esc(k.ghi_chu || '')}</textarea>
+    </div>
+    <div class="row-toolbar" style="margin:8px 0 0"><button class="btn" type="button" data-ktluu="${k.id}">Lưu</button><button class="chip" type="button" data-kthen="1">Gọi lại mai</button><button class="chip" type="button" data-kthen="3">+3 ngày</button><button class="chip" type="button" data-kthen="7">+1 tuần</button><a href="#" class="small" data-ktls="${k.id}">Lịch sử</a></div>
+    <div class="kt-ls small muted"></div>
+  </div>`).join('') || `<p class="muted">${ds.length ? 'Không có khách trong nhóm này.' : 'Chưa có khách nào được giao cho anh chị. Quản lý giao khách từ Kho khách.'}</p>`;
+}
+$('#ktLoc').addEventListener('click', e => { const b = e.target.closest('[data-ktloc]'); if(b){ ktLoc = b.dataset.ktloc; veKT(); } });
+$('#ktQ').oninput = e => { ktQ = e.target.value; veKT(); };
+$('#ktLamMoi').onclick = taiKT;
+$('#ktDs').addEventListener('click', async e => {
+  const the = e.target.closest('[data-kt]'); if(!the) return;
+  const id = +the.dataset.kt;
+  if(e.target.closest('[data-ktgoi]')) track('tab', 'kt-goi');
+  const h = e.target.closest('[data-kthen]'); if(h){ the.querySelector('[data-f=hen_lai]').value = cong(KT.hom_nay, +h.dataset.kthen); return; }
+  const l = e.target.closest('[data-ktls]'); if(l){ e.preventDefault(); const r = await api('/api/khach-cua-toi?ls=' + id).catch(() => ({})); const NL = { 'trang-thai':'Trạng thái', 'ghi-chu':'Ghi chú', 'hen-lai':'Hẹn gọi lại', giao:'Giao khách', 'dat-lich':'Khách đặt lịch', nap:'Nạp kho' }; the.querySelector('.kt-ls').innerHTML = (r.lich_su || []).map(x => `<div>${esc(x.luc)} · <b>${esc(NL[x.loai] || x.loai)}</b>: ${esc(x.loai === 'hen-lai' && /^\d{4}-/.test(x.noi_dung) ? ngayVN(x.noi_dung) : (x.noi_dung || ''))}</div>`).join('') || 'Chưa có lịch sử.'; return; }
+  const sv = e.target.closest('[data-ktluu]'); if(!sv) return;
+  const b = { id, trang_thai: the.querySelector('[data-f=trang_thai]').value, hen_lai: the.querySelector('[data-f=hen_lai]').value || null, ghi_chu: the.querySelector('[data-f=ghi_chu]').value };
+  if(b.trang_thai === 'dnc' && !confirm('Đánh dấu KHÔNG GỌI NỮA? Khách sẽ không được liên hệ lại.')) return;
+  sv.disabled = true; const r = await api('/api/khach/cap-nhat', b).catch(() => ({})); sv.disabled = false;
+  if(!r.ok){ sv.textContent = 'Lỗi, thử lại'; return; }
+  track('kho', b.trang_thai);
+  const k = KT.ds.find(x => x.id === id); if(k && !r.khong_doi){ Object.assign(k, { trang_thai: r.trang_thai, hen_lai: r.hen_lai, ghi_chu: b.ghi_chu, lan_cham: (k.lan_cham || 0) + 1, cham_cuoi: 'vừa xong' }); }
+  veKT();
+});
+
+/* ===== KHO KHÁCH (admin) ===== */
+let KHO = null, khoDong = [];
+async function taiKho(){
+  if(XEM_THU){ $('#khoDs').innerHTML = '<p class="muted">Bản xem thử không có kho.</p>'; return; }
+  const qs = new URLSearchParams({ q: $('#khoQ').value.trim(), sale: $('#khoLocSale').value || '', tt: $('#khoLocTT').value || '' });
+  const r = await api('/api/kho?' + qs).catch(() => ({}));
+  if(!r.ok){ $('#khoDs').innerHTML = '<div class="alert bad">Không tải được kho.</div>'; return; }
+  KHO = r; veKho();
+}
+function tenSale(p){ return ((KHO && KHO.sales || []).find(x => x.p === p) || {}).s || p || 'Chưa giao'; }
+function veKho(){
+  const r = KHO, t = r.tong || {};
+  $('#khoSo').innerHTML = [[t.n || 0,'khách trong kho'],[t.chua || 0,'chưa giao sale'],[t.da_cham || 0,'đã chăm ít nhất 1 lần'],[r.sales.length,'sale nhận khách']].map(([b,x]) => `<div class="fact"><b>${b}</b><small>${x}</small></div>`).join('');
+  const ts = Object.fromEntries(r.theo_sale.map(x => [x.sale_p, x]));
+  $('#khoTheoSale').innerHTML = r.sales.length ? `<div class="tbl-wrap"><table><thead><tr><th>Sale</th><th class="num">Đang giữ</th><th class="num">Đã chăm</th><th class="num">Cần gọi hôm nay</th><th class="num">Hẹn xem</th><th class="num">Lock/Cọc</th></tr></thead><tbody>${r.sales.map(x => { const v = ts[x.p] || {}; return `<tr><td><b>${esc(x.s)}</b></td><td class="num">${v.n || 0}</td><td class="num">${v.da_cham || 0}</td><td class="num">${v.can_goi || 0}</td><td class="num">${v.hen || 0}</td><td class="num">${v.chot || 0}</td></tr>`; }).join('')}</tbody></table></div>${t.chua ? `<button class="btn" type="button" id="khoChiaDeu" style="margin-top:10px">Chia đều ${t.chua} khách chưa giao</button>` : ''}` : '<p class="muted small">Chưa có sale nào được duyệt để nhận khách.</p>';
+  const oSale = [['','Mọi sale'],['chua','Chưa giao'], ...r.sales.map(x => [x.p, x.s])];
+  const giu = [$('#khoLocSale').value, $('#khoLocTT').value];
+  $('#khoLocSale').innerHTML = oSale.map(([v,x]) => `<option value="${esc(v)}">${esc(x)}</option>`).join(''); $('#khoLocSale').value = giu[0] || '';
+  $('#khoLocTT').innerHTML = [['','Mọi trạng thái'], ...Object.entries(r.trang_thai)].map(([v,x]) => `<option value="${esc(v)}">${esc(x)}</option>`).join(''); $('#khoLocTT').value = giu[1] || '';
+  $('#khoGiaoCho').innerHTML = [['','Giao cho…'], ...r.sales.map(x => [x.p, x.s]), ['__thu','Thu hồi về kho']].map(([v,x]) => `<option value="${esc(v)}">${esc(x)}</option>`).join('');
+  $('#khoDs').innerHTML = r.ds.length ? `<div class="tbl-wrap"><table><thead><tr><th><input type="checkbox" id="khoTatCa" aria-label="Chọn tất cả"></th><th>Khách</th><th>Nguồn</th><th>Sale</th><th>Trạng thái</th><th>Chăm</th></tr></thead><tbody>${r.ds.map(k => `<tr><td><input type="checkbox" data-khoid="${k.id}"></td><td><b>${esc(k.ten || '—')}</b><br><span class="small muted">${esc(k.sdt)}</span></td><td class="small">${esc(k.nguon || '')}</td><td class="small">${esc(tenSale(k.sale_p))}</td><td><span class="badge ${TT_MAU[k.trang_thai] || 'b-mute'}">${esc(r.trang_thai[k.trang_thai] || k.trang_thai)}</span></td><td class="small">${k.lan_cham || 0} lần${k.cham_cuoi ? '<br>' + esc(k.cham_cuoi) : ''}</td></tr>`).join('')}</tbody></table></div><p class="small muted">Hiện tối đa 200 khách gần nhất theo bộ lọc.</p>` : '<p class="muted">Kho trống hoặc không có khách khớp bộ lọc.</p>';
+}
+$('#khoLamMoi').onclick = taiKho; $('#khoLocSale').onchange = taiKho; $('#khoLocTT').onchange = taiKho;
+let khoHen; $('#khoQ').oninput = () => { clearTimeout(khoHen); khoHen = setTimeout(taiKho, 350); };
+$('#tab-kho').addEventListener('click', async e => {
+  if(e.target.id === 'khoTatCa'){ $('#khoDs').querySelectorAll('[data-khoid]').forEach(c => c.checked = e.target.checked); return; }
+  if(e.target.id === 'khoChiaDeu'){ e.target.disabled = true; const r = await api('/api/kho/giao', { chia_deu_chua_giao: true }).catch(() => ({})); alert(r.ok ? `Đã chia ${r.chia} khách.` : 'Không chia được.'); taiKho(); return; }
+  if(e.target.id === 'khoGiao'){
+    const ids = [...$('#khoDs').querySelectorAll('[data-khoid]:checked')].map(c => +c.dataset.khoid), v = $('#khoGiaoCho').value;
+    if(!ids.length || !v) return alert('Chọn khách và người nhận.');
+    const r = await api('/api/kho/giao', { ids, sale_p: v === '__thu' ? null : v }).catch(() => ({})); alert(r.ok ? `Đã giao ${r.giao} khách.` : 'Không giao được.'); taiKho(); return;
+  }
+  if(e.target.id === 'khoNap'){ napKho(); }
+});
+// --- đọc file: CSV tự đọc; Excel dùng SheetJS (tải khi cần, cdn.jsdelivr) ---
+function docCSV(t){ const hang = []; let o = '', row = [], q = false; for(let i = 0; i < t.length; i++){ const c = t[i]; if(q){ if(c === '"' && t[i+1] === '"'){ o += '"'; i++; } else if(c === '"') q = false; else o += c; } else if(c === '"') q = true; else if(c === ',' || c === ';' || c === '\t'){ row.push(o); o = ''; } else if(c === '\n' || c === '\r'){ if(c === '\r' && t[i+1] === '\n') i++; row.push(o); hang.push(row); row = []; o = ''; } else o += c; } if(o || row.length){ row.push(o); hang.push(row); } return hang.filter(r => r.some(x => String(x).trim())); }
+function napSheetJS(){ return window.XLSX ? Promise.resolve() : new Promise((ok, loi) => { const s = document.createElement('script'); s.src = 'https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js'; s.onload = ok; s.onerror = loi; document.head.append(s); }); }
+const COT = { ten:['ten','ho ten','ho va ten','name','khach hang','ten khach','ten kh'], sdt:['sdt','so dien thoai','dien thoai','phone','mobile','so dt','dt','sdt kh'], nguon:['nguon','source','kenh'], nhu_cau:['nhu cau','quan tam','san pham','can quan tam','loai can'], ghi_chu:['ghi chu','note','ghichu','mo ta'] };
+function anhXaCot(hang){
+  // tìm dòng tiêu đề trong 10 dòng đầu; không có thì đoán cột SĐT theo nội dung
+  for(let i = 0; i < Math.min(10, hang.length); i++){
+    const map = {}; hang[i].forEach((h, j) => { const x = bo_dau(h).replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim(); for(const [k, ds] of Object.entries(COT)) if(!(k in map) && ds.some(d => x === d || x.startsWith(d + ' ') || x.endsWith(' ' + d))) map[k] = j; });
+    if('sdt' in map) return { map, dau: i + 1 };
+  }
+  const soCot = Math.max(...hang.slice(0, 50).map(r => r.length)); let best = -1, diem = 0;
+  for(let j = 0; j < soCot; j++){ const d = hang.slice(0, 50).filter(r => /^(\+?84|0)\d{9}$/.test(String(r[j] || '').replace(/[\s.\-()]/g,''))).length; if(d > diem){ diem = d; best = j; } }
+  return best >= 0 ? { map: { sdt: best, ...(best > 0 ? { ten: best - 1 } : {}) }, dau: 0 } : null;
+}
+$('#khoFile').addEventListener('change', async e => {
+  const f = e.target.files[0]; if(!f) return;
+  $('#khoXemTruoc').innerHTML = '<p class="muted">Đang đọc file…</p>';
+  try{
+    let hang;
+    if(/\.csv$/i.test(f.name)) hang = docCSV(await f.text());
+    else { await napSheetJS(); const wb = XLSX.read(await f.arrayBuffer()); hang = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { header: 1, raw: false, defval: '' }); }
+    const ax = anhXaCot(hang);
+    if(!ax){ $('#khoXemTruoc').innerHTML = '<div class="alert bad">Không tìm thấy cột số điện thoại trong file.</div>'; return; }
+    const g = (r, k) => k in ax.map ? String(r[ax.map[k]] ?? '').trim() : '';
+    khoDong = hang.slice(ax.dau).map(r => ({ ten: g(r,'ten'), sdt: g(r,'sdt'), nguon: g(r,'nguon'), nhu_cau: g(r,'nhu_cau'), ghi_chu: g(r,'ghi_chu') })).filter(x => x.sdt || x.ten);
+    const hopLe = khoDong.filter(x => /^(\+?84|0)\d{9}$/.test(x.sdt.replace(/[\s.\-()]/g,''))).length;
+    $('#khoXemTruoc').innerHTML = `<div class="alert info small">File <b>${esc(f.name)}</b>: ${khoDong.length} dòng · <b>${hopLe}</b> số hợp lệ · ${khoDong.length - hopLe} số lỗi (bỏ qua). Cột nhận ra: ${Object.keys(ax.map).map(k => ({ten:'tên',sdt:'SĐT',nguon:'nguồn',nhu_cau:'nhu cầu',ghi_chu:'ghi chú'})[k]).join(', ')}.</div>
+      <div class="tbl-wrap" style="margin-bottom:10px"><table><thead><tr><th>Tên</th><th>SĐT</th><th>Nguồn</th><th>Nhu cầu</th></tr></thead><tbody>${khoDong.slice(0,5).map(x => `<tr><td>${esc(x.ten)}</td><td>${esc(x.sdt)}</td><td class="small">${esc(x.nguon)}</td><td class="small">${esc(x.nhu_cau)}</td></tr>`).join('')}</tbody></table></div>
+      <button class="btn" type="button" id="khoNap">Nạp ${hopLe} khách vào kho</button> <span id="khoKq" class="small"></span>`;
+  }catch(err){ $('#khoXemTruoc').innerHTML = '<div class="alert bad">Không đọc được file. Lưu lại dạng .xlsx hoặc .csv rồi thử lại.</div>'; }
+});
+async function napKho(){
+  if(!$('#khoHopPhap').checked) return alert('Tick ô xác nhận nguồn dữ liệu hợp pháp trước khi nạp.');
+  const nut = $('#khoNap'); nut.disabled = true;
+  const tong = { them: 0, trung_kho: 0, trung_file: 0, loi: 0, chia: 0 };
+  for(let i = 0; i < khoDong.length; i += 500){
+    $('#khoKq').textContent = `Đang nạp ${Math.min(i + 500, khoDong.length)}/${khoDong.length}…`;
+    const r = await api('/api/kho/nap', { ds: khoDong.slice(i, i + 500), nguon: $('#khoNguon').value.trim(), chia: $('#khoChia').value }).catch(() => ({}));
+    if(!r.ok){ $('#khoKq').textContent = 'Lỗi khi nạp — phần đã nạp vẫn giữ. Thử lại sẽ tự bỏ qua số đã có.'; nut.disabled = false; return; }
+    for(const k in tong) tong[k] += r[k] || 0;
+  }
+  $('#khoXemTruoc').innerHTML = `<div class="alert info">✅ Đã nạp <b>${tong.them}</b> khách mới${tong.chia ? `, chia cho sale ${tong.chia}` : ''}. Bỏ qua: ${tong.trung_kho} đã có trong kho, ${tong.trung_file} trùng trong file, ${tong.loi} số lỗi.</div>`;
+  $('#khoFile').value = ''; khoDong = []; track('tab', 'kho-nap'); taiKho();
+}
+
+/* ===== BÁO CÁO HIỆU SUẤT (chỉ admin; máy chủ chặn 403 với vai khác) ===== */
+const TEN_TAB = {'thi-dua':'Thi đua','khach-toi':'Khách của tôi','kho':'Kho khách','telesales':'Telesales','tong-quan':'Tổng quan','toa':'Tòa','bang-hang':'Bảng hàng','chinh-sach':'Chính sách','lich-tt':'Lịch TT','phap-ly':'Pháp lý','hoi-dap':'Hỏi đáp','tai-lieu':'Tài liệu','bao-cao':'Báo cáo'};
+const tenKB = id => ({'chan-ymyl':'(chặn câu lợi nhuận)','tra-toa':'(tra hồ sơ tòa)'}[id] || (KB.find(k => k.id === id) || {}).tieu_de || id);
+const tong = n => Object.values(n || {}).reduce((a,b) => a + b, 0);
+const nhieuNhat = o => { const e = Object.entries(o || {}).sort((a,b) => b[1] - a[1])[0]; return e ? e : null; };
+async function taiBaoCao(){
+  $('#bcWrap').innerHTML = '<p class="muted">Đang tải…</p>';
+  const r = await api('/api/bao-cao?so_ngay=' + $('#bcNgay').value).catch(() => ({ st: 0 }));
+  if(!r.ok){ $('#bcWrap').innerHTML = `<div class="alert bad">Không tải được báo cáo (${r.st === 403 ? 'tài khoản không có quyền quản trị' : 'lỗi kết nối'}).</div>`; return; }
+  veBaoCao(r);
+}
+$('#bcNgay').onchange = taiBaoCao; $('#bcLamMoi').onclick = taiBaoCao;
+function veBaoCao(r){
+  const tk = r.tai_khoan, hn = r.theo_ngay.at(-1) || {};
+  const nguoi = r.nguoi.filter(u => u.vai !== 'admin');
+  const sales = nguoi.filter(u => u.vai === 'sales' && u.tt === 'duyet').sort((a,b) => (b.n.hen || 0) - (a.n.hen || 0) || tong(b.n) - tong(a.n) || String(b.cuoi||'').localeCompare(String(a.cuoi||'')));
+  const khach = nguoi.filter(u => u.vai === 'khach' && u.tt === 'duyet').sort((a,b) => tong(b.n) - tong(a.n));
+  const imLang = sales.filter(u => !u.ngay_hd).length;
+  const hoiTong = nguoi.reduce((a,u) => a + u.hoi, 0), hoiTruot = nguoi.reduce((a,u) => a + u.hoi_truot, 0);
+  const tile = (so, nhan, phu) => `<div class="fact"><b>${so}</b><small>${nhan}${phu ? `<br>${phu}` : ''}</small></div>`;
+  // Biểu đồ cột chồng: người hoạt động mỗi ngày (sale / khách) — 2 series, có chú thích + tooltip + bảng số bên dưới
+  const max = Math.max(1, ...r.theo_ngay.map(d => d.sales + d.khach));
+  const cot = r.theo_ngay.map(d => `<div class="bc-cot" data-tip="${ngayVN(d.ngay)} · ${d.sales} sale · ${d.khach} khách · ${d.tuong_tac} thao tác">${d.sales ? `<span style="height:${d.sales / max * 100}%;background:var(--s-sale)"></span>` : ''}${d.khach ? `<span style="height:${d.khach / max * 100}%;background:var(--s-khach);${d.sales ? 'margin-bottom:2px' : ''}"></span>` : ''}</div>`).join('');
+  const nhan = r.theo_ngay.map((d,i) => `<div>${r.theo_ngay.length > 14 && i % 3 ? '' : ngayVN(d.ngay).slice(0,5)}</div>`).join('');
+  const hang = u => { const tb = nhieuNhat(u.tab), to = nhieuNhat(u.toa); const t = tong(u.n);
+    return `<tr class="${t ? '' : 'bc-0'}"><td><b>${esc(u.s)}</b><br><span class="small muted">${esc(u.p)}</span></td><td class="small">${u.cuoi ? esc(u.cuoi) : 'chưa vào'}</td><td class="num">${u.ngay_hd}</td><td class="num">${u.n.vao || 0}</td><td class="small">${tb ? esc(TEN_TAB[tb[0]] || tb[0]) + ' (' + tb[1] + ')' : '—'}</td><td class="small">${to ? esc(to[0]) + ' (' + to[1] + ')' : '—'}</td><td class="num">${u.hoi}${u.hoi_truot ? ` <span class="badge b-warn">${u.hoi_truot} trượt</span>` : ''}</td><td class="num"><b>${u.n.hen || 0}</b></td><td class="num">${u.n.lich || 0}</td><td class="num">${u.n.ts || 0}</td><td class="num"><b>${t}</b></td></tr>`; };
+  const bang = (ds, rong) => ds.length ? `<div class="tbl-wrap"><table><thead><tr><th>Người</th><th>Lần cuối</th><th class="num">Ngày HĐ</th><th class="num">Lượt vào</th><th>Xem nhiều</th><th>Tòa quan tâm</th><th class="num">Hỏi trợ lý</th><th class="num">Hẹn đặt</th><th class="num">Tính lịch TT</th><th class="num">Chép kịch bản</th><th class="num">Tổng thao tác</th></tr></thead><tbody>${ds.map(hang).join('')}</tbody></table></div>` : `<p class="muted">${rong}</p>`;
+  $('#bcWrap').innerHTML = `
+  <p class="small muted">Cập nhật ${esc(r.luc)} · ${r.so_ngay} ngày gần nhất · số đếm từ thao tác thật trên hub (ghi theo lô, tối đa 20 lô/người/ngày)</p>
+  <div class="facts">
+    ${tile(tk.sales, 'sale đã duyệt', imLang ? `<span style="color:var(--warn)">${imLang} chưa vào trong kỳ</span>` : '')}
+    ${tile(tk.khach, 'khách đã duyệt')}
+    ${tile(tk.cho, 'đang chờ duyệt', tk.cho ? '<span style="color:var(--warn)">xem mục dưới</span>' : '')}
+    ${tile(nguoi.reduce((a,u) => a + (u.n.hen || 0), 0), 'hẹn đặt trong kỳ', 'sale tự ghi sau cuộc gọi')}
+    ${tile(hn.nguoi || 0, 'người hoạt động hôm nay')}
+    ${tile(hoiTong, 'câu hỏi trợ lý', hoiTong ? Math.round((hoiTong - hoiTruot) / hoiTong * 100) + '% trả lời được' : '')}
+  </div>
+  <div class="card"><h3>📅 Khách đặt lịch (${(r.dat_lich || []).length})</h3>${(r.dat_lich || []).length ? `<div class="tbl-wrap"><table><thead><tr><th>Gửi lúc</th><th>Khách</th><th>Muốn</th><th>Ngày · buổi</th><th>Ghi chú</th></tr></thead><tbody>${r.dat_lich.map(l => `<tr><td class="small">${esc(l.luc)}</td><td><b>${esc(l.s)}</b><br><a class="small" href="tel:${esc(l.p)}">${esc(l.p)}</a></td><td>${l.ht === 'video' ? 'Gọi video' : 'Nhà mẫu'}</td><td>${ngayVN(l.ngay)} · ${({sang:'sáng',chieu:'chiều',toi:'tối'})[l.buoi] || ''}</td><td class="small">${esc(l.ghi_chu || '')}</td></tr>`).join('')}</tbody></table></div>` : '<p class="small muted">Chưa có khách đặt lịch trong kỳ.</p>'}</div>
+  ${r.cho_duyet.length ? `<div class="card"><h3>Chờ duyệt (${r.cho_duyet.length})</h3><div class="tbl-wrap"><table><thead><tr><th>Người</th><th>Xin vai</th><th>Đăng ký lúc</th><th></th></tr></thead><tbody>${r.cho_duyet.map(c => `<tr><td><b>${esc(c.s)}</b><br><span class="small muted">${esc(c.p)} · ${esc(c.e)}</span></td><td>${c.vai === 'khach' ? 'Khách hàng' : 'Sale'}</td><td class="small">${esc(c.tao)}</td><td><button class="btn" data-duyet="${esc(c.p)}" data-kq="sales">Sale</button> <button class="btn ghost" data-duyet="${esc(c.p)}" data-kq="khach">Khách</button> <button class="btn ghost" style="color:var(--bad)" data-duyet="${esc(c.p)}" data-kq="tuchoi">Từ chối</button></td></tr>`).join('')}</tbody></table></div></div>` : ''}
+  <div class="card"><h3>Người hoạt động mỗi ngày</h3>
+    <div class="bc-leg"><span><i style="background:var(--s-sale)"></i>Sale</span><span><i style="background:var(--s-khach)"></i>Khách</span></div>
+    <div class="bc-bar" role="img" aria-label="Số người hoạt động mỗi ngày, xem bảng số bên dưới">${cot}</div><div class="bc-nhan">${nhan}</div>
+    <details style="margin-top:8px"><summary class="small muted" style="cursor:pointer">Xem bảng số</summary><div class="tbl-wrap"><table><thead><tr><th>Ngày</th><th class="num">Sale</th><th class="num">Khách</th><th class="num">Thao tác</th></tr></thead><tbody>${r.theo_ngay.slice().reverse().map(d => `<tr><td>${ngayVN(d.ngay)}</td><td class="num">${d.sales}</td><td class="num">${d.khach}</td><td class="num">${d.tuong_tac}</td></tr>`).join('')}</tbody></table></div></details>
+  </div>
+  <div class="card"><h3>Hiệu suất từng sale</h3><p class="small muted">Xếp theo số hẹn đặt, rồi tổng thao tác. Dòng mờ = sale đã duyệt nhưng chưa mở hub trong kỳ.</p>${bang(sales, 'Chưa có sale nào được duyệt.')}</div>
+  <div class="card"><h3>Khách hàng trên hub</h3>${bang(khach, 'Chưa có khách nào được duyệt.')}</div>
+  <div class="grid">
+    <div class="card"><h3>Câu hỏi trợ lý chưa trả lời được</h3><p class="small muted">Nguồn để bồi thêm kho hỏi đáp.</p>${r.hoi_truot.length ? `<ul class="tight small">${r.hoi_truot.map(h => `<li>“${esc(h.q)}” <span class="muted">— ${esc(h.s)}, ${ngayVN(h.ngay)}</span></li>`).join('')}</ul>` : '<p class="muted small">Chưa có.</p>'}</div>
+    <div class="card"><h3>Chủ đề được hỏi nhiều</h3>${r.hoi_nhieu.length ? `<ol class="tight small">${r.hoi_nhieu.map(h => `<li>${esc(tenKB(h.id))} <span class="muted">(${h.n})</span></li>`).join('')}</ol>` : '<p class="muted small">Chưa có.</p>'}</div>
+  </div>
+  <div class="card"><h3>Bán hàng &amp; dòng tiền</h3><div class="alert warn" style="margin:0">Chưa có nguồn số: chưa có bảng hàng (Stacking), chưa có file giao dịch/dòng tiền cho Capital Square. Khi có, mục này sẽ hiện lock/cọc/ký theo sale và tiền thu theo ngày như báo cáo Happy Home. Hub không tự đặt số.</div></div>`;
+  $('#bcWrap').querySelectorAll('[data-duyet]').forEach(b => b.onclick = async () => {
+    b.disabled = true;
+    const x = await api('/api/quan-ly', { p: b.dataset.duyet, kq: b.dataset.kq }).catch(() => ({}));
+    if(!x.ok){ b.disabled = false; alert('Không duyệt được: ' + (x.err || 'lỗi kết nối')); return; }
+    taiBaoCao();
+  });
+  const tip = $('#bcTip');
+  $('#bcWrap').querySelectorAll('[data-tip]').forEach(c => {
+    c.onmousemove = e => { tip.textContent = c.dataset.tip; tip.hidden = false; tip.style.left = Math.min(e.clientX + 12, innerWidth - tip.offsetWidth - 8) + 'px'; tip.style.top = (e.clientY - 34) + 'px'; };
+    c.onmouseleave = () => { tip.hidden = true; };
+    c.onclick = e => { c.onmousemove(e); };
+  });
+}
+
+/* mở tab: link có #mục thì theo link, còn lại LUÔN vào Bảng hàng — màn chính (CEO lệnh 27/09/2026) */
+(function(){
+  const duoc = t => { const s = document.getElementById('tab-' + t); const v = document.body.dataset.vai; return s && !(v === 'khach' && s.classList.contains('chi-sale')) && !(v !== 'admin' && s.classList.contains('chi-admin')); };
+  const t = location.hash.slice(1);
+  openTab(duoc(t) ? t : 'bang-hang');
+})();
+} /* hết veTrang() */
+
+/* khởi động */
+if(XEM_THU){ moHub({ du_lieu: XEM_THU, vai: new URLSearchParams(location.search).get('vai') || 'sales', s: 'Xem thử' }); }
+else if(LS.get('csq_tk')) vaoHub();
+else manLogin('form');
+</script>

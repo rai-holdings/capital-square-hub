@@ -1,0 +1,16 @@
+# MẪU — chép thành wrangler.toml rồi điền mã của mình (wrangler.toml không lên git)
+# Cấu hình Cloudflare Pages cho hub Capital Square .
+# site/_worker.js do build_site.py sinh — cổng đăng nhập + API dữ liệu. Xem SPEC.md mục "Đăng nhập".
+name = "capital-square-hub"
+pages_build_output_dir = "site"
+compatibility_date = "2026-01-01"
+
+[[kv_namespaces]]
+binding = "CSQ"
+id = "<mã KV namespace>"
+
+# Kho khách (26/09/2026): D1 thay KV vì nạp nghìn khách vượt hạn mức ghi KV free (1.000/ngày, dùng chung đăng nhập)
+[[d1_databases]]
+binding = "DB"
+database_name = "csq-kho"
+database_id = "<mã D1 database>"

@@ -1,0 +1,21 @@
+# Chặn dữ liệu CỤC BỘ của wrangler khỏi backup git 20:30 (khảo sát backend 25/09/2026).
+# .gitignore gốc chỉ chặn *.sqlite — file *.sqlite-wal / *.sqlite-shm (chứa các lần ghi gần nhất) vẫn lọt lên GitHub.
+.wrangler-state/
+.wrangler/
+.dev.vars
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
+site-xem-thu/
+.van-tay-deploy
+
+# Tách repo 15/11/2026: ảnh phiếu/chỉ căn dựng lại từ raw/ của kho Hường Brain, không lên git
+anh-nguon/
+site/anh/
+
+# Repo công khai chỉ chứa MÃ (15/11/2026). Dữ liệu bán hàng, bản build có dữ liệu, tài liệu nội bộ, định danh tài khoản: KHÔNG lên git
+data/
+site/
+SPEC.md
+wrangler.toml
+cau-hinh.rieng.json

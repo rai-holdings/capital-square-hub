@@ -1,0 +1,9 @@
+{
+  "cloudflare_account_id": "<mã tài khoản Cloudflare>",
+  "drive_file_gio_hang": "<mã file giỏ hàng trên Google Drive>",
+  "drive_thu_muc_chi_can": {
+    "C1-T05-09": "<mã thư mục Drive>",
+    "C1-T10-12-14-25": "<mã thư mục Drive>",
+    "C6-mat-bang": "<mã thư mục Drive>"
+  }
+}
